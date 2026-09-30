@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { fadeInUpVariants, snappySpring } from '@/lib/motion';
+import { assetUrl } from '@/lib/utils';
 
 export const Hero: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ export const Hero: React.FC = () => {
       {/* 1. Fotografía de fondo: Limusina negra frente al lobby de noche */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-limo.png"
+          src={assetUrl('/images/hero-limo.png')}
           alt="Limusina de lujo negra frente a un hotel exclusivo de noche"
           className="w-full h-full object-cover object-right lg:object-center filter brightness-[0.92] contrast-[1.05]"
           loading="eager"

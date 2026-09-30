@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, Send, ChevronDown } from 'lucide-react';
 import { snappySpring } from '@/lib/motion';
+import { assetUrl } from '@/lib/utils';
 
 export const BookingSection: React.FC = () => {
   const [name, setName] = useState('');
@@ -41,7 +42,7 @@ _Deseo confirmar disponibilidad y cotización para mi evento._`;
       {/* 1. Fotografía de fondo: Pareja elegante de gala en pista de aterrizaje con jet privado y limusina */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/reserva-tarmac.png"
+          src={assetUrl('/images/reserva-tarmac.png')}
           alt="Pareja de gala en pista de aviación privada junto a limusina al atardecer"
           className="w-full h-full object-cover object-left lg:object-center filter brightness-[0.88] contrast-[1.05]"
           loading="lazy"

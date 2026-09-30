@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { CrownLogo } from '@/components/ui/CrownLogo';
+import { assetUrl } from '@/lib/utils';
 
 export const OccasionsSection: React.FC = () => {
   const occasions = [
@@ -23,7 +24,7 @@ export const OccasionsSection: React.FC = () => {
         className="hidden lg:block absolute inset-y-16 left-0 w-[calc(50vw-2rem)] xl:w-[calc(50vw-2.5rem)] z-0 overflow-hidden rounded-r-3xl border-y border-r border-white/5 shadow-2xl group"
       >
         <img
-          src="/images/interior-limo.png"
+          src={assetUrl('/images/interior-limo.png')}
           alt="Interior de lujo de limusina con techo estrellado y barra de champaña"
           className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out"
           loading="lazy"
@@ -37,7 +38,7 @@ export const OccasionsSection: React.FC = () => {
           <div className="lg:hidden w-full">
             <div className="relative rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
               <img
-                src="/images/interior-limo.png"
+                src={assetUrl('/images/interior-limo.png')}
                 alt="Interior de lujo de limusina con techo estrellado y barra de champaña"
                 className="w-full h-[340px] sm:h-[440px] object-cover object-center filter brightness-[0.95] contrast-[1.05]"
                 loading="lazy"

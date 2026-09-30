@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { CoverflowCarousel, CoverflowSlide } from '@/components/ui/coverflow-carousel';
+import { assetUrl } from '@/lib/utils';
 
 const FLEET_SLIDES: CoverflowSlide[] = [
   {
@@ -93,6 +94,11 @@ const FLEET_SLIDES: CoverflowSlide[] = [
 ];
 
 export const FleetSection: React.FC = () => {
+  const slides = useMemo(
+    () => FLEET_SLIDES.map((s) => ({ ...s, src: assetUrl(s.src) })),
+    []
+  );
+
   return (
     <section id="vehiculos" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-12 bg-obsidian-deep overflow-hidden">
       {/* Luz ambiental sutil en el fondo */}
@@ -120,7 +126,7 @@ export const FleetSection: React.FC = () => {
         {/* Carrusel Coverflow Interactivo con las Imágenes de Nuestra Flota */}
         <div className="w-full">
           <CoverflowCarousel
-            slides={FLEET_SLIDES}
+            slides={slides}
             cardWidth="clamp(240px, 30vw, 420px)"
             rotate={38}
             depth={0.55}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { assetUrl } from '@/lib/utils';
 
 interface CrownLogoProps {
   className?: string;
@@ -20,7 +21,7 @@ export const CrownLogo: React.FC<CrownLogoProps> = ({
     <div className={`flex items-center select-none ${className}`}>
       {/* Logotipo Oficial de la Agencia (LOGO.jpeg procesado a logo.png transparente de alta fidelidad) */}
       <img
-        src="/images/logo.png"
+        src={assetUrl('/images/logo.png')}
         alt="Renta tu limo - Lujo sobre ruedas"
         className={`${heightClasses[size]} w-auto object-contain filter drop-shadow-md`}
         loading="eager"
