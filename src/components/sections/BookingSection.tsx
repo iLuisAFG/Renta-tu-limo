@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Send, ChevronDown } from 'lucide-react';
+import { Calendar, MessageCircle, ChevronDown } from 'lucide-react';
 import { snappySpring } from '@/lib/motion';
 import { assetUrl } from '@/lib/utils';
 
@@ -8,32 +8,48 @@ export const BookingSection: React.FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
-  const [service, setService] = useState('Bodas');
+  const [service, setService] = useState('Bodas VIP');
 
   const services = [
-    'Bodas',
-    'Eventos corporativos',
-    'Cumpleaños',
-    'Traslados al aeropuerto',
-    'Tours y paseos',
-    'Limusina Stretch (Hasta 14 pax)',
-    'Limusina SUV (Hasta 10 pax)',
-    'Cadillac Escalade (Hasta 7 pax)',
-    'Party Bus (Hasta 20 pax)',
+    'Bodas VIP',
+    'XV Años Exclusivos',
+    'Noches VIP & Fiestas',
+    'Traslados Ejecutivos / Aeropuerto',
+    'Lincoln MKX (12 pax)',
+    'Hummer H3 (12 pax)',
+    'Hummer H2 Puertas de Gaviota (14 pax)',
+    'Escalade 2020 (15 pax)',
+    'Hummer H3 Puertas de Bandera (14 pax)',
+    'Escalade Platinum (14 pax)',
+    'Escalade Negra (13 pax)',
+    'Hummer H2 (16 pax)',
+    'Tours y Paseos Personalizados',
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const formattedDate = date
+      ? new Date(date + 'T00:00:00').toLocaleDateString('es-MX', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
+      : 'Por coordinar con el concierge';
+
     const msg = `✨ *SOLICITUD DE RESERVA - RENTA TU LIMO* ✨
 
-• *Nombre:* ${name || 'Cliente'}
-• *Teléfono:* ${phone || 'No especificado'}
-• *Fecha del Servicio:* ${date || 'Por coordinar'}
-• *Servicio de Interés:* ${service}
+👋 *Hola, deseo solicitar disponibilidad y cotización VIP:*
 
-_Deseo confirmar disponibilidad y cotización para mi evento._`;
+• *Nombre:* ${name.trim() || 'Cliente'}
+• *Teléfono:* ${phone.trim() || 'No especificado'}
+• *Fecha tentativa:* ${formattedDate}
+• *Vehículo / Ocasión:* ${service}
 
-    const url = `https://wa.me/5215500000000?text=${encodeURIComponent(msg)}`;
+_Por favor, indíquenme disponibilidad para esta fecha y los detalles de contratación. ¡Gracias!_`;
+
+    const url = `https://wa.me/5215525870546?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -60,7 +76,7 @@ _Deseo confirmar disponibilidad y cotización para mi evento._`;
             Reserva tu experiencia
           </h2>
           <p className="font-sans text-xs text-platinum-muted font-light leading-relaxed mb-6">
-            Completa el formulario y nos pondremos en contacto contigo en breve para confirmar tu reserva.
+            Completa los datos y se formulará automáticamente tu mensaje personalizado para chatear directamente con nuestro Concierge por WhatsApp al <span className="text-[#DDB789] font-medium">55 2587 0546</span>.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -81,7 +97,7 @@ _Deseo confirmar disponibilidad y cotización para mi evento._`;
                 <input
                   type="tel"
                   required
-                  placeholder="Teléfono"
+                  placeholder="Teléfono (10 dígitos)"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg bg-obsidian-input border border-white/10 text-platinum-light placeholder:text-platinum-muted/50 text-xs font-sans focus:outline-none focus:border-[#DDB789] transition-colors"
@@ -117,7 +133,7 @@ _Deseo confirmar disponibilidad y cotización para mi evento._`;
               </div>
             </div>
 
-            {/* Botón Enviar Solicitud */}
+            {/* Botón Enviar Solicitud por WhatsApp */}
             <motion.button
               type="submit"
               whileHover={{ scale: 1.01 }}
@@ -125,8 +141,8 @@ _Deseo confirmar disponibilidad y cotización para mi evento._`;
               transition={snappySpring}
               className="w-full mt-2 py-3.5 rounded-lg bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-gold-pill flex items-center justify-center gap-2.5 cursor-pointer"
             >
-              <Send className="w-3.5 h-3.5" strokeWidth={2} />
-              <span>Enviar solicitud</span>
+              <MessageCircle className="w-4 h-4 fill-obsidian-deep" />
+              <span>Cotizar vía WhatsApp (55 2587 0546)</span>
             </motion.button>
           </form>
         </div>

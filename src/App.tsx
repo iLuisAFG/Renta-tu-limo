@@ -4,6 +4,7 @@ import { Hero } from '@/components/sections/Hero';
 import { ValuePillars } from '@/components/sections/ValuePillars';
 import { OccasionsSection } from '@/components/sections/OccasionsSection';
 import { FleetSection } from '@/components/sections/FleetSection';
+import { AboutSection } from '@/components/sections/AboutSection';
 import { BookingSection } from '@/components/sections/BookingSection';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
@@ -21,16 +22,19 @@ export const App: React.FC = () => {
       {/* 3. Sección "Para Cada Ocasión" con Cabina Interior & Lista de Eventos */}
       <OccasionsSection />
 
-      {/* 4. Sección "Nuestra Flota" con las 4 Unidades Insignia */}
+      {/* 4. Sección "Nuestra Flota" con las Unidades Insignia y Carrusel 3D */}
       <FleetSection />
 
-      {/* 5. Sección "Reserva tu experiencia" con Formulario & Pareja en Pista Privada */}
+      {/* 5. Sección "Sobre Nosotros" con Historia y Legado Editorial */}
+      <AboutSection />
+
+      {/* 6. Sección "Reserva tu experiencia" con Formulario & Pareja en Pista Privada */}
       <BookingSection />
 
       {/* Botón Flotante Permanente de WhatsApp Concierge */}
       <aside aria-label="Contacto directo por WhatsApp" className="fixed bottom-6 right-6 z-40">
         <motion.a
-          href="https://wa.me/5215500000000?text=Hola,%20deseo%20cotizar%20un%20servicio%20exclusivo%20con%20Renta%20tu%20limo"
+          href="https://wa.me/5215525870546?text=Hola,%20deseo%20cotizar%20un%20servicio%20exclusivo%20con%20Renta%20tu%20limo"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.08 }}

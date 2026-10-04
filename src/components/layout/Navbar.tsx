@@ -94,7 +94,7 @@ export const Navbar: React.FC = () => {
           </a>
 
           <a
-            href="https://wa.me/5215500000000?text=Hola,%20deseo%20reservar%20un%20servicio%20de%20limusina"
+            href="https://wa.me/5215525870546?text=Hola,%20deseo%20reservar%20un%20servicio%20de%20limusina%20con%20Renta%20tu%20limo"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-obsidian-surface border border-champagne/40 text-champagne font-sans font-semibold text-xs tracking-wider uppercase mt-1"
