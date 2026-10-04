@@ -69,11 +69,12 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-platinum-muted font-light">
               <li><a href="#" className="hover:text-[#DDB789] transition-colors">Inicio</a></li>
-              <li><a href="#vehiculos" className="hover:text-[#DDB789] transition-colors">Nuestra Flota de Limusinas</a></li>
               <li><a href="#servicios" className="hover:text-[#DDB789] transition-colors">Servicios para Eventos</a></li>
-              <li><a href="#cobertura" className="hover:text-[#DDB789] transition-colors">Áreas de Cobertura</a></li>
-              <li><a href="#faq" className="hover:text-[#DDB789] transition-colors">Preguntas Frecuentes</a></li>
+              <li><a href="#vehiculos" className="hover:text-[#DDB789] transition-colors">Nuestra Flota de Limusinas</a></li>
               <li><a href="#nosotros" className="hover:text-[#DDB789] transition-colors">Sobre Nosotros</a></li>
+              <li><a href="#cobertura" className="hover:text-[#DDB789] transition-colors">Áreas de Cobertura</a></li>
+              <li><a href="#testimonios" className="hover:text-[#DDB789] transition-colors">Opiniones de Clientes</a></li>
+              <li><a href="#faq" className="hover:text-[#DDB789] transition-colors">Preguntas Frecuentes</a></li>
             </ul>
           </div>
 

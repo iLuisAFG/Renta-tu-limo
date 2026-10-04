@@ -4,9 +4,10 @@ import { Hero } from '@/components/sections/Hero';
 import { ValuePillars } from '@/components/sections/ValuePillars';
 import { OccasionsSection } from '@/components/sections/OccasionsSection';
 import { FleetSection } from '@/components/sections/FleetSection';
-import { ServiceAreasSection } from '@/components/sections/ServiceAreasSection';
-import { FAQSection } from '@/components/sections/FAQSection';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { ServiceAreasSection } from '@/components/sections/ServiceAreasSection';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { FAQSection } from '@/components/sections/FAQSection';
 import { BookingSection } from '@/components/sections/BookingSection';
 import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
@@ -15,28 +16,31 @@ import { snappySpring } from '@/lib/motion';
 export const App: React.FC = () => {
   return (
     <Layout>
-      {/* 1. Hero Principal con Limusina Negra Frente al Hotel (H1 Principal) */}
+      {/* 1. Hero: Propuesta de valor clara + CTA directo */}
       <Hero />
 
-      {/* 2. Franja de 4 Pilares de Valor (Conductores, Vehículos, Puntualidad, 24/7) */}
+      {/* 2. Barra de confianza / Métricas rápidas: Años de experiencia, viajes realizados, choferes certificados */}
       <ValuePillars />
 
-      {/* 3. Sección "Nuestra Flota" con las Unidades Insignia y Carrusel 3D */}
-      <FleetSection />
-
-      {/* 4. Sección "Para Cada Ocasión" con Servicios de Lujo para Eventos */}
+      {/* 3. Servicios / Ocasiones: Bodas, XV años, eventos corporativos, traslados VIP */}
       <OccasionsSection />
 
-      {/* 5. Sección "Cobertura Local & Zonas de Servicio" (SEO Local CDMX y Edomex) */}
-      <ServiceAreasSection />
+      {/* 4. Flota: Modelos disponibles, capacidad de pasajeros, amenidades y botón 'Cotizar este vehículo' */}
+      <FleetSection />
 
-      {/* 6. Sección "Preguntas Frecuentes" (FAQPage Schema y Búsquedas Long-Tail) */}
-      <FAQSection />
-
-      {/* 7. Sección "Sobre Nosotros" con Historia y Legado Editorial */}
+      {/* 5. Nuestra Historia / Diferenciadores: Quiénes son, estándares de seguridad, puntualidad y exclusividad */}
       <AboutSection />
 
-      {/* 8. Sección "Reserva tu experiencia" con Formulario Directo a WhatsApp */}
+      {/* 6. Zonas de cobertura: CDMX y municipios metropolitanos atendidos */}
+      <ServiceAreasSection />
+
+      {/* 7. Prueba social / Testimonios: Reseñas reales de clientes y calificaciones de Google/Trustpilot */}
+      <TestimonialsSection />
+
+      {/* 8. Preguntas frecuentes (FAQ): Políticas de anticipo, cancelación, tiempo mínimo de renta */}
+      <FAQSection />
+
+      {/* 9. Formulario de cotización / Reserva (CTA Final): Limpio, directo y con WhatsApp 55 2587 0546 */}
       <BookingSection />
 
       {/* Botón Flotante Permanente de WhatsApp Concierge */}
