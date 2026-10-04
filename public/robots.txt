@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Declaración del Sitemap XML canónico
-Sitemap: https://iluisafg.github.io/Renta-tu-limo/sitemap.xml
+Sitemap: https://rentalimosina.com/sitemap.xml
