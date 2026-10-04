@@ -346,11 +346,11 @@ export function CoverflowCarousel({
             </p>
           )}
           {active.meta && active.meta.length > 0 && (
-            <dl className="mt-6 w-full max-w-[320px] text-xs font-sans divide-y divide-white/5 border-y border-white/5 py-2">
+            <dl className="mt-6 w-full max-w-[380px] sm:max-w-[440px] text-xs sm:text-[13px] font-sans divide-y divide-white/5 border-y border-white/5 py-2">
               {active.meta.map((row) => (
-                <div key={row.label} className="flex justify-between py-1.5">
-                  <dt className="text-platinum-muted font-light">{row.label}</dt>
-                  <dd className="font-medium text-platinum-light">{row.value}</dd>
+                <div key={row.label} className="flex justify-between items-center py-2 gap-4">
+                  <dt className="text-platinum-muted font-light text-left">{row.label}</dt>
+                  <dd className="font-medium text-platinum-light text-right">{row.value}</dd>
                 </div>
               ))}
             </dl>
