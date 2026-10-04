@@ -16,10 +16,11 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: 'Inicio', href: '#' },
+    { label: 'Flota', href: '#vehiculos' },
     { label: 'Servicios', href: '#servicios' },
-    { label: 'Vehículos', href: '#vehiculos' },
-    { label: 'Sobre Nosotros', href: '#nosotros' },
-    { label: 'Contacto', href: '#contacto' },
+    { label: 'Cobertura', href: '#cobertura' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Nosotros', href: '#nosotros' },
   ];
 
   return (

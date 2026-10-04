@@ -4,6 +4,8 @@ import { Hero } from '@/components/sections/Hero';
 import { ValuePillars } from '@/components/sections/ValuePillars';
 import { OccasionsSection } from '@/components/sections/OccasionsSection';
 import { FleetSection } from '@/components/sections/FleetSection';
+import { ServiceAreasSection } from '@/components/sections/ServiceAreasSection';
+import { FAQSection } from '@/components/sections/FAQSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { BookingSection } from '@/components/sections/BookingSection';
 import { motion } from 'motion/react';
@@ -13,22 +15,28 @@ import { snappySpring } from '@/lib/motion';
 export const App: React.FC = () => {
   return (
     <Layout>
-      {/* 1. Hero Principal con Limusina Negra Frente al Hotel */}
+      {/* 1. Hero Principal con Limusina Negra Frente al Hotel (H1 Principal) */}
       <Hero />
 
       {/* 2. Franja de 4 Pilares de Valor (Conductores, Vehículos, Puntualidad, 24/7) */}
       <ValuePillars />
 
-      {/* 3. Sección "Para Cada Ocasión" con Cabina Interior & Lista de Eventos */}
-      <OccasionsSection />
-
-      {/* 4. Sección "Nuestra Flota" con las Unidades Insignia y Carrusel 3D */}
+      {/* 3. Sección "Nuestra Flota" con las Unidades Insignia y Carrusel 3D */}
       <FleetSection />
 
-      {/* 5. Sección "Sobre Nosotros" con Historia y Legado Editorial */}
+      {/* 4. Sección "Para Cada Ocasión" con Servicios de Lujo para Eventos */}
+      <OccasionsSection />
+
+      {/* 5. Sección "Cobertura Local & Zonas de Servicio" (SEO Local CDMX y Edomex) */}
+      <ServiceAreasSection />
+
+      {/* 6. Sección "Preguntas Frecuentes" (FAQPage Schema y Búsquedas Long-Tail) */}
+      <FAQSection />
+
+      {/* 7. Sección "Sobre Nosotros" con Historia y Legado Editorial */}
       <AboutSection />
 
-      {/* 6. Sección "Reserva tu experiencia" con Formulario & Pareja en Pista Privada */}
+      {/* 8. Sección "Reserva tu experiencia" con Formulario Directo a WhatsApp */}
       <BookingSection />
 
       {/* Botón Flotante Permanente de WhatsApp Concierge */}

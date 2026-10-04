@@ -5,7 +5,7 @@ import { assetUrl } from '@/lib/utils';
 const FLEET_SLIDES: CoverflowSlide[] = [
   {
     src: "/images/fleet/1.png",
-    alt: "Lincoln MKX - Limusina de Lujo",
+    alt: "Renta de limusina Lincoln MKX para 12 personas en CDMX - Bodas y eventos VIP",
     title: "Lincoln MKX",
     subtitle: "Elegancia & Exclusividad VIP",
     meta: [
@@ -18,7 +18,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/2.png",
-    alt: "Hummer H3 - Limusina de Lujo",
+    alt: "Renta de limusina Hummer H3 para 12 personas con piso de cristal y sonido premium",
     title: "Hummer H3",
     subtitle: "Potencia & Distinción",
     meta: [
@@ -31,7 +31,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/3.png",
-    alt: "Hummer H2 - Puertas de Gaviota",
+    alt: "Renta de limusina Hummer H2 con puertas de gaviota para 14 personas en Ciudad de México",
     title: "Hummer H2",
     subtitle: "Puertas de Gaviota",
     meta: [
@@ -44,7 +44,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/4.png",
-    alt: "Cadillac Escalade 2020 - Limusina Stretch",
+    alt: "Renta de limusina Cadillac Escalade 2020 para 15 personas - Bodas y XV Años",
     title: "Escalade 2020",
     subtitle: "Lujo Contemporáneo de Gran Escala",
     meta: [
@@ -57,7 +57,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/5.png",
-    alt: "Hummer H3 - Puertas de Bandera",
+    alt: "Renta de limusina Hummer H3 con puertas de bandera para 14 personas en CDMX",
     title: "Hummer H3",
     subtitle: "Puertas de Bandera",
     meta: [
@@ -70,7 +70,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/6.png",
-    alt: "Cadillac Escalade Platinum - Limusina VIP",
+    alt: "Renta de limusina Cadillac Escalade Platinum con pantalla de 50 pulgadas para 14 personas",
     title: "Escalade Platinum",
     subtitle: "Máxima Distinción & Entretenimiento",
     meta: [
@@ -83,7 +83,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/7.png",
-    alt: "Escalade Negra - Black Edition VIP",
+    alt: "Renta de limusina Escalade Negra Black Edition para 13 personas con chofer privado",
     title: "Escalade Negra",
     subtitle: "Edición Black Presidencial",
     meta: [
@@ -96,7 +96,7 @@ const FLEET_SLIDES: CoverflowSlide[] = [
   },
   {
     src: "/images/fleet/8.png",
-    alt: "Hummer H2 - Gran Capacidad VIP",
+    alt: "Renta de limusina Hummer H2 Imperial de gran capacidad para 16 personas en eventos",
     title: "Hummer H2",
     subtitle: "Máxima Capacidad & Presencia",
     meta: [
@@ -125,17 +125,17 @@ export const FleetSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto text-center">
         {/* Encabezado de la Sección */}
-        <div className="max-w-2xl mx-auto mb-10">
+        <div className="max-w-3xl mx-auto mb-10">
           <span className="block font-sans text-xs uppercase tracking-[0.25em] text-[#DDB789] font-medium mb-3">
-            VEHÍCULOS DE LUJO
+            FLOTA DE LIMUSINAS EN CDMX
           </span>
 
           <h2 className="font-serif text-3xl sm:text-5xl font-normal text-platinum-light mb-4 tracking-tight">
-            Nuestra Flota
+            Nuestra Flota de Limusinas y Vehículos de Lujo
           </h2>
 
-          <p className="font-sans text-xs sm:text-sm text-platinum-muted font-light leading-relaxed max-w-lg mx-auto">
-            Contamos con una exclusiva selección de limusinas y vehículos de alta gama para cada tipo de evento.
+          <p className="font-sans text-xs sm:text-sm text-platinum-muted font-light leading-relaxed max-w-xl mx-auto">
+            Explora nuestra exclusiva selección de limusinas Hummer, Cadillac Escalade y Lincoln en renta para 12 a 16 pasajeros. Cada unidad está equipada con sonido de alta fidelidad, quemacocos panorámico, piso de cristal iluminado y chofer ejecutivo privado.
           </p>
         </div>
 

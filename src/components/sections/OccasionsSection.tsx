@@ -5,11 +5,11 @@ import { assetUrl } from '@/lib/utils';
 
 export const OccasionsSection: React.FC = () => {
   const occasions = [
-    'Bodas',
-    'Eventos corporativos',
-    'Cumpleaños',
-    'Traslados al aeropuerto',
-    'Tours y paseos',
+    { title: 'Bodas VIP y Recepciones', desc: 'Llegadas triunfales para novios, sesión fotográfica y traslados de cortejo nupcial.' },
+    { title: 'XV Años Exclusivos', desc: 'Entrada memorable a la fiesta con amigas y familiares en limusinas Hummer y Escalade.' },
+    { title: 'Graduaciones & Noches VIP', desc: 'Celebraciones de gala con sonido de concierto, iluminación ambiental y bar a bordo.' },
+    { title: 'Transporte Ejecutivo & Aeropuerto', desc: 'Traslados discretos y puntuales para directivos y personalidades (AICM y AIFA).' },
+    { title: 'Aniversarios, Tours & Alfombra Roja', desc: 'Experiencias de romance y sofisticación con ruta personalizada en la Ciudad de México.' },
   ];
 
   return (
@@ -25,9 +25,11 @@ export const OccasionsSection: React.FC = () => {
       >
         <img
           src={assetUrl('/images/interior-limo.png')}
-          alt="Interior de lujo de limusina con techo estrellado y barra de champaña"
+          alt="Interior de limusina de lujo con bar, asientos de piel y techo de fibra óptica para eventos en CDMX - Renta tu Limo"
           className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out"
           loading="lazy"
+          width="1200"
+          height="800"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-deep/50 via-transparent to-transparent pointer-events-none" />
       </div>
@@ -39,9 +41,11 @@ export const OccasionsSection: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
               <img
                 src={assetUrl('/images/interior-limo.png')}
-                alt="Interior de lujo de limusina con techo estrellado y barra de champaña"
+                alt="Interior de limusina de lujo con bar, asientos de piel y techo de fibra óptica para eventos en CDMX - Renta tu Limo"
                 className="w-full h-[340px] sm:h-[440px] object-cover object-center filter brightness-[0.95] contrast-[1.05]"
                 loading="lazy"
+                width="800"
+                height="600"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-obsidian-deep/50 via-transparent to-transparent pointer-events-none" />
             </div>
@@ -59,30 +63,35 @@ export const OccasionsSection: React.FC = () => {
 
             {/* Overline */}
             <span className="block font-sans text-xs uppercase tracking-[0.25em] text-[#DDB789] font-medium mb-3">
-              PARA CADA OCASIÓN
+              SERVICIOS DE TRANSPORTE DE LUJO
             </span>
 
-            {/* Título Principal */}
+            {/* Título Principal H2 */}
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-platinum-light leading-[1.12] mb-5 tracking-tight">
-              El lujo que se adapta <br />
-              a tus necesidades.
+              Limusinas para eventos <br />
+              que exigen distinción.
             </h2>
 
             {/* Párrafo Descriptivo */}
             <p className="font-sans text-xs sm:text-sm text-platinum-muted font-light leading-relaxed mb-8 max-w-lg">
-              Ya sea una boda, un evento corporativo, un cumpleaños o un simple traslado, en <span className="text-[#DDB789] font-medium">Renta tu limo</span> te ofrecemos una experiencia única, con el máximo confort y estilo.
+              Diseñamos cada itinerario a la medida de tu celebración en la Ciudad de México y alrededores. Ya sea una boda de gala, una fiesta de XV años, traslados ejecutivos o aniversarios, en <span className="text-[#DDB789] font-medium">Renta tu Limo</span> garantizamos puntualidad de contrato y amenidades de primer nivel.
             </p>
 
             {/* Lista de Servicios con Checkmarks Dorados */}
-            <div className="flex flex-col gap-3.5 w-full">
+            <div className="flex flex-col gap-4 w-full">
               {occasions.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#DDB789]/20 text-[#DDB789] flex items-center justify-center shrink-0">
+                <div key={item.title} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#DDB789]/20 text-[#DDB789] flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-[#DDB789]" strokeWidth={2.2} />
                   </div>
-                  <span className="font-sans text-xs sm:text-sm text-platinum-light font-light tracking-wide">
-                    {item}
-                  </span>
+                  <div>
+                    <h3 className="font-sans text-xs sm:text-sm text-platinum-light font-medium tracking-wide">
+                      {item.title}
+                    </h3>
+                    <p className="font-sans text-[11px] sm:text-xs text-platinum-muted font-light leading-snug mt-0.5">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

@@ -59,9 +59,11 @@ _Por favor, indíquenme disponibilidad para esta fecha y los detalles de contrat
       <div className="absolute inset-0 z-0">
         <img
           src={assetUrl('/images/reserva-tarmac.png')}
-          alt="Pareja de gala en pista de aviación privada junto a limusina al atardecer"
+          alt="Reserva de limusina VIP en CDMX para eventos exclusivos y traslados privados - Renta tu Limo"
           className="w-full h-full object-cover object-left lg:object-center filter brightness-[0.88] contrast-[1.05]"
           loading="lazy"
+          width="1920"
+          height="1080"
         />
         {/* Degradado para oscurecer y fundir bordes */}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-deep via-transparent to-obsidian-deep/60 pointer-events-none" />
