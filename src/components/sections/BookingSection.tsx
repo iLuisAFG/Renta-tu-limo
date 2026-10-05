@@ -49,7 +49,7 @@ export const BookingSection: React.FC = () => {
 
 _Por favor, indíquenme disponibilidad para esta fecha y los detalles de contratación. ¡Gracias!_`;
 
-    const url = `https://wa.me/5215525870546?text=${encodeURIComponent(msg)}`;
+    const url = `https://wa.me/5215528130558?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -78,7 +78,7 @@ _Por favor, indíquenme disponibilidad para esta fecha y los detalles de contrat
             Reserva tu experiencia
           </h2>
           <p className="font-sans text-xs text-platinum-muted font-light leading-relaxed mb-6">
-            Completa los datos y se formulará automáticamente tu mensaje personalizado para chatear directamente con nuestro Concierge por WhatsApp al <span className="text-[#DDB789] font-medium">55 2587 0546</span>.
+            Completa los datos y se formulará automáticamente tu mensaje personalizado para chatear directamente con nuestro Concierge por WhatsApp al <span className="text-[#DDB789] font-medium">55 2813 0558</span>.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -144,7 +144,7 @@ _Por favor, indíquenme disponibilidad para esta fecha y los detalles de contrat
               className="w-full mt-2 py-3.5 rounded-lg bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-gold-pill flex items-center justify-center gap-2.5 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 fill-obsidian-deep" />
-              <span>Cotizar vía WhatsApp (55 2587 0546)</span>
+              <span>Cotizar vía WhatsApp (55 2813 0558)</span>
             </motion.button>
           </form>
         </div>

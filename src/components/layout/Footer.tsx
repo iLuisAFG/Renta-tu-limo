@@ -47,8 +47,8 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-platinum-muted font-light">
               <li>
                 <span className="text-white/40 block text-[11px]">WhatsApp 24/7:</span>
-                <a href="https://wa.me/5215525870546" target="_blank" rel="noopener noreferrer" className="text-[#DDB789] hover:underline font-medium">
-                  +52 55 2587 0546
+                <a href="https://wa.me/5215528130558" target="_blank" rel="noopener noreferrer" className="text-[#DDB789] hover:underline font-medium">
+                  +52 55 2813 0558
                 </a>
               </li>
               <li>

@@ -40,13 +40,13 @@ export const App: React.FC = () => {
       {/* 8. Preguntas frecuentes (FAQ): Políticas de anticipo, cancelación, tiempo mínimo de renta */}
       <FAQSection />
 
-      {/* 9. Formulario de cotización / Reserva (CTA Final): Limpio, directo y con WhatsApp 55 2587 0546 */}
+      {/* 9. Formulario de cotización / Reserva (CTA Final): Limpio, directo y con WhatsApp 55 2813 0558 */}
       <BookingSection />
 
       {/* Botón Flotante Permanente de WhatsApp Concierge */}
       <aside aria-label="Contacto directo por WhatsApp" className="fixed bottom-6 right-6 z-40">
         <motion.a
-          href="https://wa.me/5215525870546?text=Hola,%20deseo%20cotizar%20un%20servicio%20exclusivo%20con%20Renta%20tu%20limo"
+          href="https://wa.me/5215528130558?text=Hola,%20deseo%20cotizar%20un%20servicio%20exclusivo%20con%20Renta%20tu%20limo"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.08 }}

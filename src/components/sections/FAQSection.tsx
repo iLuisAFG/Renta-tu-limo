@@ -13,7 +13,7 @@ export const FAQSection: React.FC = () => {
     {
       question: '¿Cuánto cuesta rentar una limusina en CDMX y cómo se cotiza el servicio?',
       answer:
-        'El costo de renta de una limusina depende del modelo elegido (Lincoln, Hummer H2/H3 o Cadillac Escalade), la duración del servicio en horas, la fecha del evento y la ruta requerida. Ofrecemos paquetes especiales para Bodas VIP y XV Años. Para recibir una cotización exacta e inmediata, escríbenos directamente a nuestro WhatsApp oficial al 55 2587 0546.',
+        'El costo de renta de una limusina depende del modelo elegido (Lincoln, Hummer H2/H3 o Cadillac Escalade), la duración del servicio en horas, la fecha del evento y la ruta requerida. Ofrecemos paquetes especiales para Bodas VIP y XV Años. Para recibir una cotización exacta e inmediata, escríbenos directamente a nuestro WhatsApp oficial al 55 2813 0558.',
     },
     {
       question: '¿Cuántas personas caben en las limusinas y qué modelos tienen disponibles?',
@@ -109,7 +109,7 @@ export const FAQSection: React.FC = () => {
             </p>
           </div>
           <a
-            href="https://wa.me/5215525870546?text=Hola,%20tengo%20una%20duda%20sobre%20la%20renta%20de%20limusina"
+            href="https://wa.me/5215528130558?text=Hola,%20tengo%20una%20duda%20sobre%20la%20renta%20de%20limusina"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-gold-pill shrink-0"

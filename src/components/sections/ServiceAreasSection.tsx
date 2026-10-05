@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Navigation, Compass, Plane } from 'lucide-react';
+import { MapPin, Navigation, Plane } from 'lucide-react';
 
 export const ServiceAreasSection: React.FC = () => {
   const zones = [
@@ -23,13 +23,6 @@ export const ServiceAreasSection: React.FC = () => {
       tag: 'Traslados Ejecutivos',
       highlight: 'AICM (Terminal 1 y 2), AIFA y Aeropuerto Internacional de Toluca (Terminal Ejecutiva / FBO).',
       details: 'Recepción en sala VIP con chofer bilingüe, asistencia de equipaje y puntualidad milimétrica.',
-    },
-    {
-      icon: Compass,
-      title: 'Bodas de Destino & Foráneos',
-      tag: 'Servicios Especiales',
-      highlight: 'Cuernavaca, Puebla, Valle de Bravo, Tepoztlán, Querétaro y Tepotzotlán.',
-      details: 'Viajes interestatales con logística previa de ruta, seguro de viajero y confort ininterrumpido.',
     },
   ];
 
@@ -59,7 +52,7 @@ export const ServiceAreasSection: React.FC = () => {
         </div>
 
         {/* Rejilla de Cobertura Local */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {zones.map((zone) => {
             const Icon = zone.icon;
             return (
@@ -110,7 +103,7 @@ export const ServiceAreasSection: React.FC = () => {
             </p>
           </div>
           <a
-            href="https://wa.me/5215525870546?text=Hola,%20quisiera%20consultar%20cobertura%20para%20un%20traslado%20en%20limusina"
+            href="https://wa.me/5215528130558?text=Hola,%20quisiera%20consultar%20cobertura%20para%20un%20traslado%20en%20limusina"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-gold-pill shrink-0"
