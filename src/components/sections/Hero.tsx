@@ -7,7 +7,7 @@ import { assetUrl } from '@/lib/utils';
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-start overflow-hidden bg-obsidian-deep">
-      {/* 1. Fotografía de fondo: Limusina negra frente al lobby de noche */}
+      {/* 1. Fotografía de fondo: Convoy de limusinas Cadillac bajo las luces nocturnas */}
       <div className="absolute inset-0 z-0">
         <picture className="absolute inset-0 w-full h-full">
           <source
@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
           />
           <img
             src={assetUrl('/images/hero-limo.png')}
-            alt="Renta de limusina de lujo en CDMX frente a hotel exclusivo para bodas y eventos VIP - Renta tu Limo"
+            alt="Convoy de limusinas Cadillac de lujo bajo las luces nocturnas en CDMX para bodas, XV años y eventos VIP - Renta tu Limo"
             className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.05]"
             loading="eager"
             // @ts-expect-error React 18 / standard HTML fetchpriority attribute

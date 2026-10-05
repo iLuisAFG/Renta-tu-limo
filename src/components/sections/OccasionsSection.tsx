@@ -25,7 +25,7 @@ export const OccasionsSection: React.FC = () => {
       >
         <img
           src={assetUrl('/images/interior-limo.png')}
-          alt="Interior de limusina de lujo con bar, asientos de piel y techo de fibra óptica para eventos en CDMX - Renta tu Limo"
+          alt="Interior de limusina de lujo con iluminación LED, piso y techo de estrellas y asientos de piel para eventos en CDMX - Renta tu Limo"
           className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.05] group-hover:scale-105 transition-transform duration-700 ease-out"
           loading="lazy"
           width="1200"
@@ -41,7 +41,7 @@ export const OccasionsSection: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
               <img
                 src={assetUrl('/images/interior-limo.png')}
-                alt="Interior de limusina de lujo con bar, asientos de piel y techo de fibra óptica para eventos en CDMX - Renta tu Limo"
+                alt="Interior de limusina de lujo con iluminación LED, piso y techo de estrellas y asientos de piel para eventos en CDMX - Renta tu Limo"
                 className="w-full h-[340px] sm:h-[440px] object-cover object-center filter brightness-[0.95] contrast-[1.05]"
                 loading="lazy"
                 width="800"
