@@ -1,0 +1,6 @@
+# robots.txt para Renta tu Limo
+User-agent: *
+Allow: /
+
+# Declaración del Sitemap XML canónico
+Sitemap: https://rentalimosina.com/sitemap.xml
