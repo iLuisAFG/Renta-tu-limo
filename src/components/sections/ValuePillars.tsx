@@ -1,39 +1,39 @@
 import React from 'react';
-import { ShieldCheck, Star, Clock, Award } from 'lucide-react';
+import { ShieldCheck, FileCheck, Clock, Sparkles } from 'lucide-react';
 
 export const ValuePillars: React.FC = () => {
-  const metrics = [
+  const pillars = [
     {
-      icon: Award,
-      metric: '+10 Años',
-      title: 'Años de Experiencia',
-      description: 'Liderando el transporte de lujo en México',
-    },
-    {
-      icon: Star,
-      metric: '+2,500',
-      title: 'Viajes VIP Realizados',
-      description: 'Bodas, XV años y galas memorables',
+      icon: FileCheck,
+      badge: 'Garantía Legal',
+      title: 'Contrato Formal',
+      description: 'Certeza total en fecha, horario y limusina pactada',
     },
     {
       icon: ShieldCheck,
-      metric: '100%',
-      title: 'Choferes Certificados',
-      description: 'Etiqueta formal, protocolo y discreción',
+      badge: 'Etiqueta VIP',
+      title: 'Choferes Ejecutivos',
+      description: 'Presentación formal, discreción y trato preferencial',
     },
     {
       icon: Clock,
-      metric: 'Puntualidad 24/7',
-      title: 'Llegada Garantizada',
-      description: 'Presencia previa en sitio por contrato',
+      badge: 'En Sitio Previo',
+      title: 'Puntualidad Estricta',
+      description: 'Presencia con 15-20 minutos de anticipación al evento',
+    },
+    {
+      icon: Sparkles,
+      badge: 'Higiene Total',
+      title: 'Unidades Sanitizadas',
+      description: 'Limpieza detallada y desinfección antes de cada viaje',
     },
   ];
 
   return (
     <section className="relative bg-obsidian-deep border-t border-b border-white/5 py-8 sm:py-10 px-4 sm:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 divide-y-0 divide-white/5">
-          {metrics.map((item) => {
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {pillars.map((item) => {
             const Icon = item.icon;
             return (
               <div
@@ -42,8 +42,8 @@ export const ValuePillars: React.FC = () => {
               >
                 <div className="flex items-center gap-2 mb-1">
                   <Icon className="w-5 h-5 text-[#DDB789]" strokeWidth={1.75} />
-                  <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-semibold text-[#DDB789] tracking-tight">
-                    {item.metric}
+                  <span className="font-serif text-lg sm:text-xl font-semibold text-[#DDB789] tracking-tight">
+                    {item.badge}
                   </span>
                 </div>
                 <h3 className="font-sans text-xs sm:text-sm text-platinum-light font-medium leading-snug">

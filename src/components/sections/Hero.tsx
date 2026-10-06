@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
           />
           <img
             src={assetUrl('/images/hero-limo.png')}
-            alt="Convoy de limusinas Cadillac de lujo bajo las luces nocturnas en CDMX para bodas, XV años y eventos VIP - Renta tu Limo"
+            alt="Renta de limusinas en CDMX - Convoy de limusinas Cadillac de lujo bajo las luces nocturnas para bodas, XV años y eventos VIP - Renta tu Limo"
             className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.05]"
             loading="eager"
             // @ts-expect-error React 18 / standard HTML fetchpriority attribute
@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian-deep via-transparent to-black/30 pointer-events-none" />
       </div>
 
-      {/* 2. Contenido Editorial Alineado a la Izquierda */}
+      {/* 2. Contenido Editorial Semántico */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full pt-28 pb-20">
         <motion.div
           initial="hidden"
@@ -39,25 +39,24 @@ export const Hero: React.FC = () => {
           variants={fadeInUpVariants}
           className="max-w-2xl text-left"
         >
-          {/* Overline con intención local */}
+          {/* Overline con marca */}
           <span className="block font-sans text-xs sm:text-[13px] uppercase tracking-[0.3em] text-[#DDB789] font-medium mb-3">
-            SERVICIO EXCLUSIVO DE LIMUSINAS EN CDMX Y ÁREA METROPOLITANA
+            RENTA TU LIMO • SERVICIO EXCLUSIVO CON CHOFER PRIVADO
           </span>
 
-          {/* Título Principal H1 Semántico y Comercial */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-[80px] font-bold text-[#DDB789] tracking-tight leading-[1] mb-5">
-            RENTA TU LIMO
+          {/* ÚNICO H1 de la Home */}
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl xl:text-[76px] font-bold text-[#DDB789] tracking-tight leading-[1.05] mb-4">
+            Renta de Limusinas en CDMX
           </h1>
 
-          {/* Subtítulo H2 */}
+          {/* H2 Semántico según estructura */}
           <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-platinum-light font-light leading-tight tracking-tight mb-5">
-            Renta de limusinas para Bodas, XV Años <br className="hidden sm:block" />
-            y eventos de alto nivel en México.
+            Limusinas de lujo en renta en CDMX
           </h2>
 
-          {/* Párrafo explicativo con palabras clave naturales */}
+          {/* Introducción comercial natural */}
           <p className="font-sans text-xs sm:text-sm text-platinum-muted font-light leading-relaxed max-w-lg mb-8">
-            Haz de tu fecha especial un momento inolvidable. Ponemos a tu disposición la flota más prestigiosa de limusinas Hummer, Escalade y Lincoln en la Ciudad de México, con chofer privado certificado, confort absoluto y atención personalizada 24/7.
+            Haz de tu fecha especial un momento inolvidable. Ponemos a tu disposición la flota más prestigiosa de limusinas Hummer, Cadillac Escalade y Lincoln en la Ciudad de México y Área Metropolitana, con chofer privado certificado en etiqueta, confort absoluto, sonido envolvente de alta fidelidad y atención personalizada 24/7.
           </p>
 
           {/* Botón Reserva Ahora */}
@@ -70,7 +69,7 @@ export const Hero: React.FC = () => {
               className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-gold-pill hover:shadow-gold-glow cursor-pointer group"
             >
               <Calendar className="w-4 h-4 text-obsidian-deep" strokeWidth={2} />
-              <span>Reserva Ahora</span>
+              <span>Solicita tu Cotización</span>
               <ArrowRight className="w-4 h-4 text-obsidian-deep transition-transform duration-300 group-hover:translate-x-1" />
             </motion.a>
           </div>
