@@ -22,6 +22,7 @@ export const MaintenanceWall: React.FC = () => {
 
   return (
     <div
+      data-nosnippet
       role="dialog"
       aria-modal="true"
       aria-label="Sitio web en mantenimiento"

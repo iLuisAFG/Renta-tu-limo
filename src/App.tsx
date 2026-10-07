@@ -28,7 +28,6 @@ export const App: React.FC = () => {
             ? 'pointer-events-none select-none filter blur-[1.5px] opacity-75 min-h-screen overflow-hidden'
             : ''
         }
-        aria-hidden={IS_MAINTENANCE_BLOCKED}
       >
         <Layout>
           {/* 1. Hero: Propuesta de valor clara + CTA directo */}
