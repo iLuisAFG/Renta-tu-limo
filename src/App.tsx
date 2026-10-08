@@ -16,7 +16,7 @@ import { snappySpring } from '@/lib/motion';
 
 // Control del Muro Temporal de Mantenimiento por Liquidación Pendiente
 // Cambiar a 'true' para volver a bloquear el sitio si es necesario:
-const IS_MAINTENANCE_BLOCKED = false;
+const IS_MAINTENANCE_BLOCKED = true;
 
 export const App: React.FC = () => {
   return (
