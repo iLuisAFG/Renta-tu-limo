@@ -1,40 +1,11 @@
 import React from 'react';
-import { MapPin, Navigation, Plane, Compass } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
+import { ZONES_DATA } from '@/data/zones';
+import { COMPANY_DATA } from '@/data/company';
 
 export const ServiceAreasSection: React.FC = () => {
-  const zones = [
-    {
-      icon: MapPin,
-      title: 'Ciudad de México (CDMX)',
-      tag: 'Cobertura Integral',
-      highlight: 'Polanco, Santa Fe, Coyoacán, San Ángel, Condesa, Roma, Pedregal y Paseo de la Reforma.',
-      details: 'Servicio exclusivo a domicilio, iglesias, salones de fiestas, hoteles y recintos para eventos en todas las alcaldías de la CDMX.',
-    },
-    {
-      icon: Navigation,
-      title: 'Área Metropolitana (Edomex)',
-      tag: 'Zona Poniente y Norte',
-      highlight: 'Interlomas, Huixquilucan, Naucalpan de Juárez, Ciudad Satélite y Atizapán de Zaragoza.',
-      details: 'Traslados seguros con chofer privado hacia haciendas, jardines de eventos y zonas residenciales metropolitanas.',
-    },
-    {
-      icon: Plane,
-      title: 'Aeropuertos y Vuelos Ejecutivos',
-      tag: 'Recepción VIP',
-      highlight: 'AICM (Terminal 1 y 2), AIFA y Aeropuerto Internacional de Toluca.',
-      details: 'Recepción y bienvenida ejecutiva en sala VIP o hangar con asistencia de equipaje y puntualidad milimétrica.',
-    },
-    {
-      icon: Compass,
-      title: 'Servicios Foráneos Especiales',
-      tag: 'Rutas Foráneas',
-      highlight: 'Cuernavaca, Puebla, Toluca y Valle de Bravo.',
-      details: 'Coordinación logística previa para bodas de destino, aniversarios y eventos de gala fuera de la capital.',
-    },
-  ];
-
   return (
-    <section id="cobertura" className="relative py-20 sm:py-28 bg-[#07080B] border-t border-white/5 overflow-hidden">
+    <section id="cobertura" aria-labelledby="cobertura-section-heading" className="relative py-20 sm:py-28 bg-[#07080B] border-t border-white/5 overflow-hidden">
       {/* Luz ambiental */}
       <div 
         className="absolute top-1/2 left-10 w-[500px] h-[500px] bg-champagne/[0.02] rounded-full blur-[140px] pointer-events-none -z-10" 
@@ -49,7 +20,7 @@ export const ServiceAreasSection: React.FC = () => {
           </span>
 
           {/* H2 Semántico según estructura */}
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-platinum-light tracking-tight mb-4">
+          <h2 id="cobertura-section-heading" className="font-serif text-3xl sm:text-5xl font-normal text-platinum-light tracking-tight mb-4">
             Zonas donde ofrecemos servicio
           </h2>
 
@@ -58,41 +29,43 @@ export const ServiceAreasSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Rejilla de Cobertura Local */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {zones.map((zone) => {
-            const Icon = zone.icon;
+        {/* Rejilla de Cobertura Local vinculada a ZONES_DATA */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+          {ZONES_DATA.map((zone) => {
             return (
               <article
-                key={zone.title}
-                className="flex flex-col justify-between p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#DDB789]/30 transition-all duration-300 group shadow-lg"
+                key={zone.slug}
+                className="flex flex-col justify-between p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#DDB789]/30 transition-all duration-300 group shadow-lg text-left"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2.5 rounded-xl bg-[#DDB789]/10 text-[#DDB789] transition-transform duration-300 group-hover:scale-105">
-                      <Icon className="w-5 h-5" />
+                    <div className="p-2 rounded-xl bg-[#DDB789]/10 text-[#DDB789] transition-transform duration-300 group-hover:scale-105">
+                      <MapPin className="w-4 h-4" />
                     </div>
-                    <span className="font-sans text-[10px] tracking-wider uppercase px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[#DDB789] border border-white/5">
-                      {zone.tag}
+                    <span className="font-sans text-[10px] tracking-wider uppercase px-2 py-0.5 rounded-full bg-white/[0.04] text-[#DDB789] border border-white/5">
+                      CDMX & Edomex
                     </span>
                   </div>
 
                   <h3 className="font-serif text-base sm:text-lg text-platinum-light font-medium mb-2">
-                    {zone.title}
+                    <a href={zone.path} className="hover:text-[#DDB789] transition-colors">
+                      {zone.title.replace('Renta de Limusinas en ', '')}
+                    </a>
                   </h3>
 
-                  <p className="font-sans text-xs text-[#DDB789]/90 font-medium leading-relaxed mb-2.5">
-                    {zone.highlight}
-                  </p>
-
-                  <p className="font-sans text-xs text-platinum-muted font-light leading-relaxed">
-                    {zone.details}
+                  <p className="font-sans text-xs text-platinum-muted font-light leading-relaxed line-clamp-3 mb-4">
+                    {zone.description}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-sans text-platinum-muted">
-                  <span>Puntualidad en sitio</span>
-                  <span className="text-[#DDB789] font-medium">Garantizada</span>
+                <div className="pt-3 border-t border-white/5">
+                  <a
+                    href={zone.path}
+                    className="inline-flex items-center justify-between w-full text-xs font-sans text-[#DDB789] hover:text-[#E8C8A3] group/link"
+                  >
+                    <span>Ver cobertura de zona</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+                  </a>
                 </div>
               </article>
             );
@@ -106,11 +79,11 @@ export const ServiceAreasSection: React.FC = () => {
               ¿Tu evento es en otra zona de la CDMX o Estado de México?
             </h4>
             <p className="font-sans text-xs text-platinum-muted font-light mt-0.5">
-              Personalizamos la ruta y coordinamos los tiempos de traslado para que no tengas ninguna preocupación en tu día especial.
+              Personalizamos la ruta y coordinamos los tiempos de traslado para haciendas en Morelos, Puebla y Estado de México.
             </p>
           </div>
           <a
-            href="https://wa.me/5215528130558?text=Hola,%20quisiera%20consultar%20cobertura%20para%20un%20traslado%20en%20limusina"
+            href={COMPANY_DATA.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-gold-pill shrink-0"

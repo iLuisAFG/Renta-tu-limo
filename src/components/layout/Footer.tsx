@@ -1,5 +1,10 @@
 import React from 'react';
 import { CrownLogo } from '@/components/ui/CrownLogo';
+import { COMPANY_DATA } from '@/data/company';
+import { FLEET_VEHICLES } from '@/data/fleet';
+import { OCCASIONS_DATA } from '@/data/occasions';
+import { ZONES_DATA } from '@/data/zones';
+import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -7,12 +12,14 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Fila Principal: Logo, Frase Central y Redes Sociales */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-10 border-b border-white/5">
-          {/* 1. Logo (Izquierda - 4 columnas) */}
+          {/* 1. Logo */}
           <div className="md:col-span-4 flex items-center justify-center md:justify-start">
-            <CrownLogo size="md" className="items-center md:items-start" />
+            <a href="/" className="inline-block" aria-label="Renta tu Limo - Página de Inicio">
+              <CrownLogo size="md" className="items-center md:items-start" />
+            </a>
           </div>
 
-          {/* 2. Frase Central con Divisores Verticales (4 columnas) */}
+          {/* 2. Frase Central */}
           <div className="md:col-span-4 flex flex-col items-center justify-center text-center md:border-x md:border-white/10 px-4 py-2">
             <p className="font-serif text-lg sm:text-xl text-platinum-light italic font-normal tracking-wide leading-snug">
               Más que un traslado, <br />
@@ -20,10 +27,10 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* 3. Redes Sociales (Derecha - Solo Facebook oficial) */}
+          {/* 3. Redes Sociales */}
           <div className="md:col-span-4 flex items-center justify-center md:justify-end">
             <a
-              href="https://www.facebook.com/profile.php?id=61586622210053"
+              href={COMPANY_DATA.facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 hover:border-[#DDB789]/50 text-platinum-muted hover:text-[#DDB789] bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300 text-xs font-sans group"
@@ -37,94 +44,128 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Fila Intermedia: NAP Local SEO y Enlaces Internos */}
-        <div className="py-10 border-b border-white/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-xs font-sans">
+        {/* Fila Intermedia: Enlaces Internos Exhaustivos y NAP */}
+        <div className="py-10 border-b border-white/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-left text-xs font-sans">
           {/* Col 1: Datos de Contacto y Concierge */}
           <div>
             <h3 className="font-serif text-sm text-platinum-light font-medium mb-3">
               Contacto Concierge
             </h3>
-            <ul className="space-y-2 text-platinum-muted font-light">
-              <li>
-                <span className="text-white/40 block text-[11px]">WhatsApp 24/7:</span>
-                <a href="https://wa.me/5215528130558" target="_blank" rel="noopener noreferrer" className="text-[#DDB789] hover:underline font-medium">
-                  +52 55 2813 0558
-                </a>
+            <ul className="space-y-2.5 text-platinum-muted font-light">
+              <li className="flex items-start gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#DDB789] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-white/40 block text-[11px]">Teléfono directo:</span>
+                  <a href={`tel:${COMPANY_DATA.phoneClean}`} className="text-platinum-light hover:text-[#DDB789] transition-colors font-medium">
+                    {COMPANY_DATA.phoneDisplay}
+                  </a>
+                </div>
               </li>
-              <li>
-                <span className="text-white/40 block text-[11px]">Horario de atención:</span>
-                Lunes a Domingo, 24 horas
+              <li className="flex items-start gap-2">
+                <MessageCircle className="w-3.5 h-3.5 text-[#25D366] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-white/40 block text-[11px]">WhatsApp 24/7:</span>
+                  <a href={COMPANY_DATA.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-[#DDB789] hover:underline font-medium">
+                    {COMPANY_DATA.phoneDisplay}
+                  </a>
+                </div>
               </li>
-              <li>
-                <span className="text-white/40 block text-[11px]">Ubicación base:</span>
-                Ciudad de México (CDMX)
+              <li className="flex items-start gap-2">
+                <Clock className="w-3.5 h-3.5 text-[#DDB789] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-white/40 block text-[11px]">Atención Concierge:</span>
+                  Lunes a Domingo, 24 horas
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#DDB789] shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-white/40 block text-[11px]">Base operativa:</span>
+                  Ciudad de México y Área Metropolitana
+                </div>
               </li>
             </ul>
           </div>
 
-          {/* Col 2: Navegación Rápida */}
+          {/* Col 2: Ocasiones y Servicios */}
           <div>
             <h3 className="font-serif text-sm text-platinum-light font-medium mb-3">
-              Navegación
+              Servicios por Ocasión
             </h3>
             <ul className="space-y-2 text-platinum-muted font-light">
-              <li><a href="#" className="hover:text-[#DDB789] transition-colors">Inicio</a></li>
-              <li><a href="#servicios" className="hover:text-[#DDB789] transition-colors">Servicios para Eventos</a></li>
-              <li><a href="#vehiculos" className="hover:text-[#DDB789] transition-colors">Nuestra Flota de Limusinas</a></li>
-              <li><a href="#nosotros" className="hover:text-[#DDB789] transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#cobertura" className="hover:text-[#DDB789] transition-colors">Áreas de Cobertura</a></li>
-              <li><a href="#testimonios" className="hover:text-[#DDB789] transition-colors">Opiniones de Clientes</a></li>
-              <li><a href="#faq" className="hover:text-[#DDB789] transition-colors">Preguntas Frecuentes</a></li>
+              {OCCASIONS_DATA.map((occ) => (
+                <li key={occ.slug}>
+                  <a href={occ.path} className="hover:text-[#DDB789] transition-colors">
+                    {occ.title.replace(' en CDMX', '')}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Ocasiones Principales */}
+          {/* Col 3: Flota de Limusinas (Parte 1) */}
           <div>
             <h3 className="font-serif text-sm text-platinum-light font-medium mb-3">
-              Servicios Destacados
+              Nuestra Flota (Hummer & Lincoln)
             </h3>
             <ul className="space-y-2 text-platinum-muted font-light">
-              <li><a href="#reserva" className="hover:text-platinum-light transition-colors">Limusinas para Bodas VIP</a></li>
-              <li><a href="#reserva" className="hover:text-platinum-light transition-colors">Limusinas para XV Años</a></li>
-              <li><a href="#reserva" className="hover:text-platinum-light transition-colors">Graduaciones & Noches de Fiesta</a></li>
-              <li><a href="#reserva" className="hover:text-platinum-light transition-colors">Traslados Ejecutivos Aeropuerto</a></li>
-              <li><a href="#reserva" className="hover:text-platinum-light transition-colors">Aniversarios y Alfombra Roja</a></li>
+              {FLEET_VEHICLES.slice(0, 4).map((car) => (
+                <li key={car.slug}>
+                  <a href={car.path} className="hover:text-[#DDB789] transition-colors">
+                    Limusina {car.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 4: Cobertura Local */}
+          {/* Col 4: Flota de Limusinas (Parte 2) */}
           <div>
             <h3 className="font-serif text-sm text-platinum-light font-medium mb-3">
-              Cobertura en México
+              Flota Cadillac & Gran Escala
             </h3>
-            <p className="text-platinum-muted font-light leading-relaxed mb-2">
-              CDMX (Polanco, Santa Fe, Coyoacán, San Ángel, Pedregal), Interlomas, Naucalpan, Satélite, Cuernavaca y Puebla.
-            </p>
-            <span className="inline-block text-[11px] text-[#DDB789]">
-              • Puntualidad y privacidad garantizada
-            </span>
+            <ul className="space-y-2 text-platinum-muted font-light">
+              {FLEET_VEHICLES.slice(4).map((car) => (
+                <li key={car.slug}>
+                  <a href={car.path} className="hover:text-[#DDB789] transition-colors">
+                    Limusina {car.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 5: Cobertura Local */}
+          <div>
+            <h3 className="font-serif text-sm text-platinum-light font-medium mb-3">
+              Zonas de Cobertura
+            </h3>
+            <ul className="space-y-2 text-platinum-muted font-light">
+              {ZONES_DATA.map((z) => (
+                <li key={z.slug}>
+                  <a href={z.path} className="hover:text-[#DDB789] transition-colors">
+                    Limusinas en {z.title.replace('Renta de Limusinas en ', '').replace(', CDMX', '')}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-4 pt-3 border-t border-white/5 text-[11px] text-platinum-muted/70">
+              Servicios foráneos: Cuernavaca, Puebla, Toluca y Valle de Bravo.
+            </div>
           </div>
         </div>
 
         {/* Fila Inferior: Copyright, Legales y Créditos */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-platinum-muted/80 font-light">
-          <p>© 2025 Renta tu Limo. Todos los derechos reservados.</p>
+          <p>© 2026 Renta tu Limo. Todos los derechos reservados.</p>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 sm:gap-x-6 gap-y-2">
-            <a href="#" className="hover:text-platinum transition-colors">Términos y condiciones</a>
+            <a href="/" className="hover:text-platinum transition-colors">Inicio</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-platinum transition-colors">Política de privacidad</a>
+            <a href="/#vehiculos" className="hover:text-platinum transition-colors">Flota de Limusinas</a>
             <span className="text-white/20">|</span>
-            <span className="text-platinum-muted">
-              Desarrollado por{' '}
-              <a
-                href="https://customlocal-group.vercel.app/pages"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#DDB789] hover:underline hover:text-[#E8C8A3] transition-colors font-medium"
-              >
-                CustomLocal Pages.
-              </a>
-            </span>
+            <a href="/#cobertura" className="hover:text-platinum transition-colors">Zonas</a>
+            <span className="text-white/20">|</span>
+            <a href="/#faq" className="hover:text-platinum transition-colors">Preguntas Frecuentes</a>
           </div>
         </div>
       </div>

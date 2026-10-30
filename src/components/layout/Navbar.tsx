@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CrownLogo } from '@/components/ui/CrownLogo';
 import { Calendar, Menu, X, MessageCircle } from 'lucide-react';
+import { COMPANY_DATA } from '@/data/company';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,13 +16,12 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Inicio', href: '#' },
-    { label: 'Servicios', href: '#servicios' },
-    { label: 'Flota', href: '#vehiculos' },
-    { label: 'Nosotros', href: '#nosotros' },
-    { label: 'Cobertura', href: '#cobertura' },
-    { label: 'Opiniones', href: '#testimonios' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Inicio', href: '/' },
+    { label: 'Servicios', href: '/#servicios' },
+    { label: 'Flota', href: '/#vehiculos' },
+    { label: 'Nosotros', href: '/#nosotros' },
+    { label: 'Cobertura', href: '/#cobertura' },
+    { label: 'FAQ', href: '/#faq' },
   ];
 
   return (
@@ -34,12 +34,12 @@ export const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
         {/* Logo de la Corona */}
-        <a href="#" className="flex items-center group cursor-pointer">
+        <a href="/" className="flex items-center group cursor-pointer" aria-label="Renta tu Limo Inicio">
           <CrownLogo size="sm" />
         </a>
 
         {/* Enlaces de Navegación Centrales */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10">
+        <nav aria-label="Navegación principal" className="hidden md:flex items-center gap-8 lg:gap-10">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -54,19 +54,21 @@ export const Navbar: React.FC = () => {
         {/* Botón CTA Reserva Ahora */}
         <div className="hidden sm:flex items-center">
           <a
-            href="#reserva"
+            href="/#reserva"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DDB789] hover:bg-[#E8C8A3] text-obsidian-deep font-sans font-medium text-xs tracking-wider transition-all duration-300 shadow-gold-pill hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
             <Calendar className="w-3.5 h-3.5 text-obsidian-deep" strokeWidth={2} />
-            <span>Reserva Ahora</span>
+            <span>Cotizar Ahora</span>
           </a>
         </div>
 
         {/* Botón Menú Móvil */}
         <button
+          type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-platinum hover:text-champagne transition-colors"
-          aria-label="Abrir menú"
+          className="md:hidden p-2 text-platinum hover:text-champagne transition-colors cursor-pointer"
+          aria-label={mobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -87,16 +89,16 @@ export const Navbar: React.FC = () => {
           ))}
 
           <a
-            href="#reserva"
+            href="/#reserva"
             onClick={() => setMobileMenuOpen(false)}
             className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#DDB789] text-obsidian-deep font-sans font-semibold text-xs tracking-wider uppercase shadow-gold-pill mt-2"
           >
             <Calendar className="w-4 h-4" />
-            <span>Reserva Ahora</span>
+            <span>Cotizar Ahora</span>
           </a>
 
           <a
-            href="https://wa.me/5215528130558?text=Hola,%20deseo%20reservar%20un%20servicio%20de%20limusina%20con%20Renta%20tu%20limo"
+            href={COMPANY_DATA.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-obsidian-surface border border-champagne/40 text-champagne font-sans font-semibold text-xs tracking-wider uppercase mt-1"

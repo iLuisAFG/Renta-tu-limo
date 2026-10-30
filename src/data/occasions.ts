@@ -1,77 +1,152 @@
-export interface Occasion {
+export interface OccasionItem {
   id: string;
+  slug: string;
+  path: string;
   title: string;
-  tag: string;
+  subtitle: string;
+  metaTitle: string;
+  metaDescription: string;
   heroHeadline: string;
-  description: string;
   image: string;
-  recommendedVehicle: string;
+  alt: string;
+  description: string;
+  contentParagraphs: string[];
+  recommendedVehicles: string[];
   perks: string[];
 }
 
-export const OCCASIONS_DATA: Occasion[] = [
+export const OCCASIONS_DATA: OccasionItem[] = [
   {
     id: 'bodas',
-    title: 'Bodas de Ensueño',
-    tag: 'NUPCIAL VIP',
-    heroHeadline: 'La llegada celestial que consagra tu unión.',
-    description: 'Comprendemos la solemnidad y emoción de tu boda. Cuidamos cada milímetro: desde el descenso en alfombra roja ante las puertas del templo hasta el brindis nupcial a bordo mientras se dirigen a la gran recepción.',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85',
-    recommendedVehicle: 'Cadillac Escalade Stretch o Chrysler 300 Tuxedo',
+    slug: 'bodas',
+    path: '/limusinas-para-bodas/',
+    title: 'Renta de Limusinas para Bodas en CDMX',
+    subtitle: 'Llegadas Nupciales Triunfales & Elegancia de Gala',
+    metaTitle: 'Renta de Limusinas para Bodas en CDMX | Renta tu Limo',
+    metaDescription: 'Renta de limusinas para bodas en CDMX con chofer de etiqueta, champaña y alfombra roja. Unidades Hummer y Escalade para 12 a 16 personas. Cotiza hoy.',
+    heroHeadline: 'La llegada soñada para el día más importante de tu vida.',
+    image: '/images/hero-limo.png',
+    alt: 'Renta de limusina para bodas de gala en Ciudad de México con chofer ejecutivo',
+    description: 'Servicio exclusivo de transporte nupcial con chofer de gala en traje formal, botella de champaña de cortesía, sesión fotográfica en ruta y puntualidad garantizada por contrato.',
+    contentParagraphs: [
+      'El día de tu boda merece un traslado a la altura de la emoción y solemnidad del acontecimiento. En Renta tu Limo coordinamos cada detalle logístico para que los novios, sus padrinos o el cortejo nupcial completo experimenten un trayecto libre de estrés, sereno y lleno de sofisticación por las avenidas de la Ciudad de México y Área Metropolitana.',
+      'Nuestras limusinas Cadillac Escalade, Hummer y Lincoln cuentan con amplios espacios interiores diseñados para preservar vestidos de novia con caudas largas y peinados de gala sin contratiempos. Cada unidad se entrega con limpieza profunda y sanitización previa, asientos de piel impecables, climatización digital independiente y cristales entintados para una privacidad absoluta.',
+      'El servicio nupcial incluye la presencia del chofer privado con 15 a 20 minutos de anticipación al domicilio o hotel de salida, apoyo con sombrilla ceremonial en caso de lluvia, protocolo de apertura de puertas en el templo y recepción, botella de espumoso o champaña de cortesía para el primer brindis como esposos y tiempo programado para sesiones de fotografía en monumentos o locaciones emblemáticas de la capital.',
+    ],
+    recommendedVehicles: ['Cadillac Escalade 2020 (15 pax)', 'Lincoln MKX (12 pax)', 'Escalade Platinum (14 pax)'],
     perks: [
-      'Despliegue de alfombra roja ceremonial al descender',
-      'Botella de Champaña de etiqueta europea para el primer brindis de esposos',
-      'Chófer en traje formal de gala con protocolo nupcial y sombrilla de seda',
-      'Itinerario blindado con holgura para sesión de fotografía de novios',
-      'Climatización perfecta para preservar el vestido y peinado intactos',
+      'Chofer profesional en traje de etiqueta formal y guantes ceremoniales',
+      'Botella de espumoso / champaña de cortesía y copas de cristal',
+      'Llegada garantizada 15 a 20 minutos antes de la hora pactada',
+      'Itinerario flexible con tiempo para sesión de fotos nupcial',
+      'Contrato formal por escrito con garantía de unidad y fecha',
     ],
   },
   {
     id: 'xv-anos',
-    title: 'XV Años Inolvidables',
-    tag: 'CELEBRACIÓN JUVENIL',
-    heroHeadline: 'La corte de honor y una entrada triunfal de época.',
-    description: 'Transforma el trayecto en la fiesta previa más deslumbrante. Espacio suficiente para la quinceañera, damas y chambelanes, iluminado por un techo de estrellas y la música que ellos elijan en sonido de estudio.',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85',
-    recommendedVehicle: 'Cadillac Escalade Platinum Stretch (20 Pasajeros)',
+    slug: 'xv-anos',
+    path: '/limusinas-para-xv-anos/',
+    title: 'Renta de Limusinas para XV Años en CDMX',
+    subtitle: 'La Entrada Triunfal que Tu Quinceañera Recordará Siempre',
+    metaTitle: 'Renta de Limusinas para XV Años en CDMX | Renta tu Limo',
+    metaDescription: 'Renta de limusinas para XV años en CDMX. Unidades Hummer y Escalade con luces LED, sonido Bluetooth y puertas de gaviota. Cotiza vía WhatsApp.',
+    heroHeadline: 'Convierte el trayecto en la fiesta previa más espectacular.',
+    image: '/images/interior-limo.png',
+    alt: 'Interior de limusina iluminada para fiesta de quince años en CDMX con amigas y chambelanes',
+    description: 'El mejor ambiente juvenil sobre ruedas para la quinceañera, sus damas y chambelanes: iluminación tipo lounge, piso de cristal, pantallas y sonido de concierto.',
+    contentParagraphs: [
+      'Celebrar los quince años es un rito de paso inolvidable en las familias mexicanas. La llegada en limusina al templo religioso y a la entrada del salón de fiestas o jardín es uno de los momentos cumbres donde se centran todas las miradas, cámaras y videos de los invitados.',
+      'Nuestra flota cuenta con los modelos favoritos de las quinceañeras: la icónica Hummer H2 con puertas de gaviota de elevación vertical, la Hummer H3 con puertas de bandera y la Escalade Platinum con pantalla de 50 pulgadas. Estas unidades permiten albergar desde 12 hasta 16 amigos y chambelanes cómodamente sentados, brindando un espacio seguro y divertido para compartir la emoción del evento.',
+      'A bordo, los jóvenes disfrutan de conexión inalámbrica Bluetooth para reproducir sus listas musicales en sistemas de audio de alta fidelidad, iluminación ambiental LED multicolor sincronizada, piso de cristal iluminado y bebidas refrescantes sin alcohol de cortesía. Como padres de familia, cuentan con la tranquilidad de un chofer profesional certificado y monitoreo de ruta.',
+    ],
+    recommendedVehicles: ['Hummer H2 Puertas de Gaviota (14 pax)', 'Escalade Platinum (14 pax)', 'Hummer H2 Imperial (16 pax)'],
     perks: [
-      'Iluminación interactiva Starlight sincronizada con el ambiente',
-      'Bar de cortesía con cócteles vírgenes, sodas artesanales y botanas',
-      'Conexión Bluetooth inmediata para playlist personalizada de la quinceañera',
-      'Paradas fotográficas en los monumentos más icónicos de la metrópolis',
-      'Supervisión y comunicación continua con los padres de familia',
+      'Puertas de gaviota o bandera para un descenso fotográfico espectacular',
+      'Conexión Bluetooth para la playlist elegida por la quinceañera',
+      'Refrescos fríos, agua embotellada y botanas de cortesía a bordo',
+      'Piso de cristal iluminado y techo panorámico para fotos y videos',
+      'Chofer con conducción prudente y comunicación constante con los padres',
     ],
   },
   {
-    id: 'noches-vip',
-    title: 'Noches VIP & Fiestas',
-    tag: 'NOCTURNO & GALA',
-    heroHeadline: 'El trayecto no es el traslado, es el epicentro de la noche.',
-    description: 'Para aniversarios estelares, cumpleaños VIP, conciertos internacionales o noches de fiesta en los mejores clubes nocturnos. Brinda con tus invitados mientras la ciudad desfila por las ventanas panorámicas entintadas.',
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=85',
-    recommendedVehicle: 'Hummer H2 Lounge o Lincoln Navigator Ultra-Luxe',
+    id: 'graduaciones',
+    slug: 'graduaciones',
+    path: '/limusinas-para-graduaciones/',
+    title: 'Limusinas para Graduaciones en CDMX',
+    subtitle: 'Celebra Tu Éxito Académico con Estilo de Alfombra Roja',
+    metaTitle: 'Renta de Limusinas para Graduaciones CDMX | Renta tu Limo',
+    metaDescription: 'Renta de limusinas para graduaciones escolares y universitarias en CDMX. Capacidad hasta 16 amigos, sonido premium y bar a bordo. Cotiza hoy.',
+    heroHeadline: 'El cierre de ciclo que merece un brindis en primera clase.',
+    image: '/images/reserva-tarmac.png',
+    alt: 'Renta de limusinas para cenas y fiestas de graduación en la Ciudad de México',
+    description: 'Traslados grupales para graduados hacia recepciones, cenas de gala y antros en la CDMX con música de concierto, bebidas frías y privacidad total.',
+    contentParagraphs: [
+      'Culminar una etapa académica de secundaria, preparatoria o universidad es motivo de festejo compartido con los mejores compañeros de generación. Llegar a la fiesta de graduación a bordo de una limusina Hummer o Cadillac Escalade es el distintivo de gala que corona años de esfuerzo y compañerismo.',
+      'Olvídate de la logística complicada de coordinar múltiples autos particulares o servicios de aplicación en horarios de noche. Nuestra flota permite que grupos de hasta 16 graduados viajen juntos con total seguridad, disfrutando de música envolvente, iluminación de fiesta, asientos en piel y bebidas frías de cortesía mientras recorren las avenidas de la metrópoli.',
+      'Ofrecemos paquetes por horas que incluyen recolección en punto acordado, parada para sesión fotográfica en monumentos o parques emblemáticos, arribo coordinado a la alfombra roja del evento y retorno seguro garantizado al finalizar la velada.',
+    ],
+    recommendedVehicles: ['Hummer H2 Imperial (16 pax)', 'Cadillac Escalade 2020 (15 pax)', 'Hummer H3 (12 pax)'],
     perks: [
-      'Cava completa con hielo, copas y mezcladores premium listos al abordaje',
-      'Aislamiento acústico para disfrutar la música con volumen y privacidad total',
-      'Coordinación de llegada coordinada en puerta principal de antros o recintos',
-      'Recogida y retorno seguro a domicilio para todo el grupo',
-      'Flexibilidad horaria con chofer a disposición exclusiva durante la noche',
+      'Capacidad grupal de 12 a 16 graduados en un solo vehículo',
+      'Audio de alta fidelidad para música continua de celebración',
+      'Paradas programadas para sesión de fotografías de toga o traje',
+      'Retorno seguro y coordinado al término de la noche',
+      'Puntualidad rigurosa respaldada por contrato formal',
     ],
   },
   {
-    id: 'corporativo',
-    title: 'Traslados Ejecutivos & Alfombra Roja',
-    tag: 'DIPLOMACIA & NEGOCIOS',
-    heroHeadline: 'Discreción inquebrantable para líderes y figuras públicas.',
-    description: 'Servicio diseñado para cumbres de negocios, conferencias internacionales, estrenos cinematográficos y traslados aeropuerto-hotel de personalidades C-Level y dignatarios extranjeros.',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85',
-    recommendedVehicle: 'Lincoln Navigator Ultra-Luxe o Chrysler 300 Imperial',
+    id: 'eventos-vip',
+    slug: 'eventos-vip',
+    path: '/limusinas-para-eventos/',
+    title: 'Limusinas para Eventos y Noches VIP en CDMX',
+    subtitle: 'Aniversarios, Conciertos, Cumpleaños & Cenas de Gala',
+    metaTitle: 'Limusinas para Eventos y Noches VIP en CDMX | Renta tu Limo',
+    metaDescription: 'Renta de limusinas para eventos, aniversarios y noches de fiesta VIP en CDMX. Servicio con chofer privado, sonido premium y bar de cortesía.',
+    heroHeadline: 'El trayecto se convierte en el epicentro de la celebración.',
+    image: '/images/hero-limo.png',
+    alt: 'Limusinas de lujo para eventos sociales, conciertos y celebraciones en Ciudad de México',
+    description: 'Experiencias de alto impacto para cumpleaños, paseos nocturnos románticos por Paseo de la Reforma, conciertos y alfombras rojas con servicio concierge 24/7.',
+    contentParagraphs: [
+      'En las grandes noches de celebración de la Ciudad de México, el trayecto no debe ser una pausa tediosa en el tráfico, sino una parte vibrante y memorable de la experiencia. Con Renta tu Limo, tu noche especial comienza en el instante exacto en que abordas la limusina y se cierran las puertas.',
+      'Diseñamos recorridos a la medida por zonas emblemáticas como Paseo de la Reforma, el Ángel de la Independencia, Fuente de Cibeles o el Centro Histórico, ofreciendo una vista panorámica nocturna inigualable a través del quemacocos de cristal mientras brindas con tus invitados con copas y bebidas de cortesía.',
+      'Ya sea para un aniversario de bodas íntimo, un cumpleaños sorpresa con amigos, la llegada a un concierto internacional en el Auditorio Nacional o una gala de premios, nuestro equipo concierge coordina rutas y tiempos para que tú solo te ocupes de disfrutar.',
+    ],
+    recommendedVehicles: ['Escalade Platinum (14 pax)', 'Escalade Negra (13 pax)', 'Lincoln MKX (12 pax)'],
     perks: [
-      'Chófer bilingüe con certificación en manejo defensivo y confidencialidad',
-      'Seguimiento telemático privado para el equipo de logística o comitiva',
-      'Wi-Fi 5G encriptado para trabajo continuo y videollamadas a bordo',
-      'Recepción personalizada en sala VIP de aeropuerto con letrero de protocolo',
-      'Facturación corporativa instantánea (CFDI deducible)',
+      'Ruta turística y nocturna personalizada en la CDMX',
+      'Bebidas de cortesía con hielera y cristalería incluida',
+      'Aislamiento acústico para máxima privacidad interior',
+      'Espera del chofer durante el desarrollo de tu cena o evento',
+      'Atención y cotización inmediata vía WhatsApp las 24 horas',
+    ],
+  },
+  {
+    id: 'traslados-ejecutivos',
+    slug: 'traslados-ejecutivos',
+    path: '/traslados-ejecutivos-aeropuerto/',
+    title: 'Traslados Ejecutivos y Aeropuerto (AICM / AIFA)',
+    subtitle: 'Discreción, Confort de Alto Nivel & Protocolo Corporativo',
+    metaTitle: 'Traslados Ejecutivos y Aeropuerto CDMX | Renta tu Limo',
+    metaDescription: 'Servicio de limusinas y traslados ejecutivos al AICM y AIFA en CDMX. Chofer bilingüe de protocolo, máxima discreción y puntualidad de contrato.',
+    heroHeadline: 'Puntualidad milimétrica y confidencialidad para directivos.',
+    image: '/images/reserva-tarmac.png',
+    alt: 'Traslado ejecutivo en limusina en pista de aterrizaje y aeropuerto en CDMX',
+    description: 'Transporte corporativo y diplomático de alta gama para personalidades, comitivas internacionales y traslados terminal AICM / AIFA / Toluca.',
+    contentParagraphs: [
+      'Para directores corporativos, inversionistas, personalidades públicas y comitivas diplomáticas, el tiempo y la confidencialidad son activos invaluables. Renta tu Limo ofrece servicios de transporte ejecutivo de protocolo diseñados para cumplir con los estándares más estrictos de seguridad y confort.',
+      'Brindamos traslados punto a punto y disposiciones por horas entre los aeropuertos internacionales de la región (AICM Terminales 1 y 2, AIFA y Aeropuerto Internacional de Toluca) y los centros financieros y residenciales de Polanco, Paseo de la Reforma, Santa Fe e Interlomas.',
+      'Nuestras unidades Escalade Negra y Lincoln ofrecen mampara divisoria de privacidad total, vidrios entintados de alta seguridad, climatización silenciosa y choferes con capacitación en etiqueta formal y estricta confidencialidad. Facturación fiscal formal (CFDI) disponible para todas las contrataciones.',
+    ],
+    recommendedVehicles: ['Escalade Negra Black Edition (13 pax)', 'Cadillac Escalade 2020 (15 pax)', 'Lincoln MKX (12 pax)'],
+    perks: [
+      'Recepción personalizada en salas de llegadas o aviación general / FBO',
+      'Chofer capacitado en manejo defensivo y confidencialidad',
+      'Mampara divisoria física e intercomunicador privado',
+      'Facturación corporativa con CFDI deducible',
+      'Monitoreo satelital de itinerario y vuelos en tiempo real',
     ],
   },
 ];
+
+export type Occasion = OccasionItem;
+export const OCCASIONS = OCCASIONS_DATA;

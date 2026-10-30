@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,7 +36,11 @@
   background: #D4AF37;
 }
 
-/* Base Body Styles */
+/* Base HTML & Body Styles */
+html {
+  background-color: var(--bg-obsidian-deep);
+}
+
 body {
   background-color: var(--bg-obsidian-deep);
   color: var(--text-platinum);

@@ -1,5 +1,4 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { fadeInUpVariants, snappySpring } from '@/lib/motion';
 import { assetUrl } from '@/lib/utils';
@@ -11,16 +10,25 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <picture className="absolute inset-0 w-full h-full">
           <source
+            type="image/webp"
+            media="(max-width: 768px)"
+            srcSet={assetUrl('/images/hero-limo-mobile.webp')}
+          />
+          <source
             media="(max-width: 768px)"
             srcSet={assetUrl('/images/hero-limo-mobile.png')}
+          />
+          <source
+            type="image/webp"
+            srcSet={assetUrl('/images/hero-limo.webp')}
           />
           <img
             src={assetUrl('/images/hero-limo.png')}
             alt="Renta de limusinas en CDMX - Convoy de limusinas Cadillac de lujo bajo las luces nocturnas para bodas, XV años y eventos VIP - Renta tu Limo"
             className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.05]"
             loading="eager"
-            // @ts-expect-error React 18 / standard HTML fetchpriority attribute
-            fetchpriority="high"
+            decoding="async"
+            fetchPriority="high"
             width="1920"
             height="1080"
           />
@@ -33,7 +41,7 @@ export const Hero: React.FC = () => {
 
       {/* 2. Contenido Editorial Semántico */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full pt-28 pb-20">
-        <motion.div
+        <m.div
           initial="hidden"
           animate="visible"
           variants={fadeInUpVariants}
@@ -61,7 +69,7 @@ export const Hero: React.FC = () => {
 
           {/* Botón Reserva Ahora */}
           <div>
-            <motion.a
+            <m.a
               href="#reserva"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -71,9 +79,9 @@ export const Hero: React.FC = () => {
               <Calendar className="w-4 h-4 text-obsidian-deep" strokeWidth={2} />
               <span>Solicita tu Cotización</span>
               <ArrowRight className="w-4 h-4 text-obsidian-deep transition-transform duration-300 group-hover:translate-x-1" />
-            </motion.a>
+            </m.a>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

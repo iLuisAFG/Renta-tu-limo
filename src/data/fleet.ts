@@ -1,97 +1,327 @@
-export interface Limousine {
+export interface FleetVehicle {
   id: string;
-  name: string;
+  slug: string;
+  path: string;
+  src: string;
+  alt: string;
+  title: string;
   subtitle: string;
-  tag: string;
   capacity: string;
-  length: string;
-  image: string;
-  description: string;
-  amenities: {
-    iconName: 'Wine' | 'Music' | 'Sparkles' | 'Shield' | 'Tv' | 'Wifi';
-    label: string;
-  }[];
-  specifications: {
-    label: string;
-    value: string;
-  }[];
-  accentColor: string;
+  capacityNum: number;
+  floorType: string;
+  sunroof: string;
+  audio: string;
+  doorsType?: string;
+  screenSize?: string;
+  metaTitle: string;
+  metaDescription: string;
+  features: string[];
+  meta: { label: string; value: string }[];
+  contentParagraphs: string[];
+  idealOccasions: string[];
 }
 
-export const FLEET_DATA: Limousine[] = [
+export const FLEET_VEHICLES: FleetVehicle[] = [
   {
-    id: 'escalade-stretch',
-    name: 'Cadillac Escalade Platinum Stretch',
-    subtitle: 'La cúspide del transporte ceremonial y presidencial',
-    tag: 'BUQUE INSIGNIA',
-    capacity: '18 - 20 Pasajeros',
-    length: '11.5 Metros',
-    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=85',
-    description: 'Nuestra unidad más imponente. Diseñada para bodas multitudinarias, comitivas de embajadas y fiestas de quince años de primer orden, con una presencia inigualable sobre cualquier avenida.',
-    amenities: [
-      { iconName: 'Sparkles', label: 'Techo Starlight con fibra óptica tridimensional' },
-      { iconName: 'Wine', label: 'Bar doble con hieleras de granito y copas de cristal cortado' },
-      { iconName: 'Music', label: 'Sistema acústico envolvente de 4,000 watts con Bluetooth' },
-      { iconName: 'Tv', label: '3 Pantallas LED Ultra HD de 32" integradas' },
-      { iconName: 'Shield', label: 'Mampara de privacidad total con intercomunicador al chofer' },
-      { iconName: 'Wifi', label: 'Conectividad satelital y puertos de carga de alta velocidad' },
+    id: 'lincoln-mkx',
+    slug: 'lincoln-mkx',
+    path: '/limusinas/lincoln-mkx/',
+    src: '/images/fleet/1.png',
+    alt: 'Renta de limusina Lincoln MKX para 12 personas en CDMX para bodas y eventos VIP',
+    title: 'Lincoln MKX',
+    subtitle: 'Elegancia & Exclusividad VIP',
+    capacity: '12 personas',
+    capacityNum: 12,
+    floorType: 'Piso de cristal iluminado',
+    sunroof: 'Panorámico',
+    audio: 'Sonido premium de alta fidelidad',
+    metaTitle: 'Renta de Limusina Lincoln MKX en CDMX | Renta tu Limo',
+    metaDescription: 'Renta la limusina Lincoln MKX en CDMX para 12 pasajeros con piso de cristal, quemacocos panorámico y chofer ejecutivo. Cotiza hoy vía WhatsApp.',
+    features: [
+      'Capacidad para 12 pasajeros cómodamente sentados',
+      'Quemacocos panorámico con vista a la ciudad',
+      'Piso de cristal con iluminación LED multicolor',
+      'Sonido premium con conectividad Bluetooth',
+      'Barra de servicio con bebidas de cortesía y copas',
+      'Mampara divisoria de privacidad con chofer de etiqueta',
     ],
-    specifications: [
-      { label: 'Capacidad Recomendada', value: 'Hasta 20 personas' },
-      { label: 'Tapicería Interior', value: 'Cuero Nappa Italiano y Alcantara' },
-      { label: 'Iluminación Ambiental', value: 'Neón líquido regulable 64 colores' },
-      { label: 'Climatización', value: 'Aire acondicionado cuádruple de alta potencia' },
+    meta: [
+      { label: 'Capacidad', value: '12 personas' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Piso', value: 'Piso de Cristal' },
+      { label: 'Audio', value: 'Sonido premium' },
+      { label: 'Cortesía', value: 'Bebidas de cortesía' },
     ],
-    accentColor: '#D4AF37',
+    contentParagraphs: [
+      'La limusina Lincoln MKX representa el balance idóneo entre distinción aristocrática y sobriedad contemporánea en la Ciudad de México. Diseñada con una carrocería alargada de líneas refinadas y acabados en cromo pulido, esta unidad es la elección favorita para parejas nupciales que buscan una llegada memorable sin caer en la ostentación excesiva.',
+      'En su interior, hasta doce pasajeros disfrutan de un salón privado climatizado con asientos forrados en piel genuina bitono, dispuestos en configuración envolvente para facilitar la convivencia. El piso de cristal templado integra tecnología de iluminación perimetral personalizable, creando atmósferas que van desde una tenue calidez romántica hasta un ambiente festivo con matices dorados.',
+      'El techo panorámico de cristal permite contemplar los monumentos más emblemáticos de avenidas como Paseo de la Reforma o las cúpulas coloniales del centro histórico mientras se realiza la sesión fotográfica. Cada trayecto incluye chofer profesional debidamente uniformado en traje de etiqueta formal, capacitado en protocolos ceremoniales y conducción defensiva, garantizando puntualidad milimétrica.',
+    ],
+    idealOccasions: ['Bodas de gala y recepciones', 'Aniversarios románticos', 'Graduaciones universitarias', 'Traslados ejecutivos de alta dirección'],
   },
   {
-    id: 'chrysler-300-imperial',
-    name: 'Chrysler 300 Imperial Tuxedo',
-    subtitle: 'Elegancia clásica neoyorquina con silueta esbelta',
-    tag: 'CLÁSICO ATEMPORAL',
-    capacity: '10 - 12 Pasajeros',
-    length: '8.8 Metros',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',
-    description: 'La opción predilecta para traslados nupciales íntimos, aniversarios de plata y cenas de gala. Su diseño sobrio y refinado ofrece la perfecta armonía entre distinción sobria y modernidad.',
-    amenities: [
-      { iconName: 'Wine', label: 'Cava refrigerada para botellas de espumoso de bienvenida' },
-      { iconName: 'Sparkles', label: 'Iluminación cenital cálida con cristalería grabada' },
-      { iconName: 'Music', label: 'Audio Premium Harman Kardon con ecualización de estudio' },
-      { iconName: 'Shield', label: 'Cristales entintados de máxima privacidad (antivisibilidad)' },
-      { iconName: 'Tv', label: 'Pantalla frontal para visualización de recuerdos o video clips' },
-      { iconName: 'Wifi', label: 'Intercomunicador privado con chofer de protocolo' },
+    id: 'hummer-h3',
+    slug: 'hummer-h3',
+    path: '/limusinas/hummer-h3/',
+    src: '/images/fleet/2.png',
+    alt: 'Renta de limusina Hummer H3 para 12 personas con piso de cristal en CDMX',
+    title: 'Hummer H3',
+    subtitle: 'Potencia & Distinción Urbana',
+    capacity: '12 personas',
+    capacityNum: 12,
+    floorType: 'Piso de cristal iluminado',
+    sunroof: 'Panorámico',
+    audio: 'Sonido envolvente de alta fidelidad',
+    metaTitle: 'Renta de Limusina Hummer H3 en CDMX | Renta tu Limo',
+    metaDescription: 'Renta la imponente limusina Hummer H3 en CDMX para 12 pasajeros con piso de cristal, quemacocos panorámico y chofer de gala. Cotiza al instante.',
+    features: [
+      'Capacidad para 12 pasajeros en confort total',
+      'Piso de cristal templado iluminado',
+      'Quemacocos panorámico de gran formato',
+      'Sonido envolvente con subwoofer y conexión inalámbrica',
+      'Bar iluminado con hieleras y cristalería de cortesía',
+      'Carrocería robusta todoterreno de gran altura',
     ],
-    specifications: [
-      { label: 'Capacidad Recomendada', value: '10 personas con máximo confort' },
-      { label: 'Tapicería Interior', value: 'Cuero Capitoné bitono carbón y champán' },
-      { label: 'Iluminación', value: 'Tiras de luz perimetral ámbar cálido' },
-      { label: 'Suspensión', value: 'Neumática adaptativa para un rodaje suave como nube' },
+    meta: [
+      { label: 'Capacidad', value: '12 personas' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Piso', value: 'Piso de Cristal' },
+      { label: 'Audio', value: 'Sonido premium' },
+      { label: 'Cortesía', value: 'Bebidas de cortesía' },
     ],
-    accentColor: '#E2E8F0',
+    contentParagraphs: [
+      'La limusina Hummer H3 ofrece una presencia inigualable en cualquier calle o avenida del Valle de México. Su imponente parrilla cromada y su silueta angulada imponen respeto y capturan todas las miradas, convirtiéndola en una de las unidades más solicitadas para celebraciones juveniles y fiestas de quince años en salones y haciendas.',
+      'El habitáculo ha sido concebido como un lounge de entretenimiento móvil. Equipado con piso de cristal retroiluminado y asientos tipo sillón perimetral de piel de alto confort, los doce ocupantes pueden sincronizar sus listas de reproducción favoritas vía Bluetooth hacia un sistema de audio envolvente de alta potencia acústica.',
+      'Su suspensión reforzada garantiza un rodaje suave y seguro tanto en el asfalto de zonas como Polanco o Santa Fe como en accesos a recintos campestres del Estado de México. El servicio incluye combustible completo para la ruta coordinada, bebidas embotelladas frías de cortesía y la asistencia constante de un chofer privado certificado.',
+    ],
+    idealOccasions: ['Fiestas de XV años', 'Paseos de graduación', 'Noches de antro y conciertos', 'Cumpleaños de alto impacto'],
   },
   {
-    id: 'navigator-presidential',
-    name: 'Lincoln Navigator Ultra-Luxe',
-    subtitle: 'El salón ejecutivo de vanguardia sobre ruedas',
-    tag: 'EDICIÓN PRESIDENCIAL',
-    capacity: '14 - 16 Pasajeros',
-    length: '10.2 Metros',
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85',
-    description: 'Inspirada en las suites ejecutivas de los aviones privados. Espacio interior descomunal con techos elevados, alfombra de lana suave y barras de bar en ébano pulido.',
-    amenities: [
-      { iconName: 'Sparkles', label: 'Suelo iluminado con efecto de pasarela alfombrada' },
-      { iconName: 'Wine', label: 'Bar iluminado con compartimentos para licores y hieleras' },
-      { iconName: 'Music', label: 'Sistema acústico Revel Ultima 3D con 20 altavoces' },
-      { iconName: 'Shield', label: 'Chófer con entrenamiento en seguridad y escolta' },
-      { iconName: 'Tv', label: 'Doble pantalla HDMI para presentaciones o streaming' },
-      { iconName: 'Wifi', label: 'Wi-Fi 5G privado y tomas de corriente 110V' },
+    id: 'hummer-h2-gaviota',
+    slug: 'hummer-h2-gaviota',
+    path: '/limusinas/hummer-h2-gaviota/',
+    src: '/images/fleet/3.png',
+    alt: 'Renta de limusina Hummer H2 con puertas de gaviota para 14 personas en CDMX',
+    title: 'Hummer H2 Puertas de Gaviota',
+    subtitle: 'Apertura Tipo Gaviota Espectacular',
+    capacity: '14 personas',
+    capacityNum: 14,
+    floorType: 'Piso de cristal iluminado',
+    sunroof: 'Panorámico',
+    audio: 'Sistema acústico de concierto',
+    doorsType: 'Apertura vertical tipo Gaviota',
+    metaTitle: 'Hummer H2 Puertas Gaviota CDMX | Renta tu Limo',
+    metaDescription: 'Espectacular limusina Hummer H2 con puertas de gaviota para 14 pasajeros en CDMX. Piso de cristal, sonido de concierto y chofer de gala.',
+    features: [
+      'Exclusivas puertas laterales de elevación vertical tipo gaviota',
+      'Capacidad amplia para 14 pasajeros cómodamente ubicados',
+      'Piso de cristal iluminado multicolor sincronizado',
+      'Quemacocos panorámico de doble sección',
+      'Sonido acústico de concierto de máxima potencia',
+      'Barra cantinera con cava de hielo y bebidas incluidas',
     ],
-    specifications: [
-      { label: 'Capacidad Recomendada', value: '14 a 16 pasajeros' },
-      { label: 'Acabados de Madera', value: 'Ébano Santos con barniz espejo' },
-      { label: 'Aislamiento Acústico', value: 'Doble cristal laminado anti-ruido urbano' },
-      { label: 'Servicio Incluido', value: 'Alfombra roja al descender y sombrillas de gala' },
+    meta: [
+      { label: 'Capacidad', value: '14 personas' },
+      { label: 'Puertas', value: 'Apertura tipo Gaviota' },
+      { label: 'Piso', value: 'Piso de Cristal' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Audio y Bar', value: 'Sonido premium & bebidas de cortesía' },
     ],
-    accentColor: '#F3E5AB',
+    contentParagraphs: [
+      'La Hummer H2 con puertas de gaviota es la definición absoluta del factor sorpresa en el transporte ceremonial de gala. Su mecanismo de apertura vertical ascendente permite un descenso triunfal y cómodo, especialmente diseñado para quinceañeras con vestidos amplios de crinolina o novias con velos de catedral que requieren descender de pie sin arrugas.',
+      'Su cabina para catorce ocupantes cuenta con acabados de superlujo: piso de cristal resistente iluminado por luces LED de colores dinámicos, bar empotrado con copas y bebidas de cortesía, y un sistema de sonido de potencia profesional calibrado para inundar el interior con audio nítido sin distorsión.',
+      'La imponente altura sobre el suelo y el ancho de vía de la Hummer H2 ofrecen una visibilidad privilegiada a lo largo del recorrido. Respaldada por contrato de servicio y póliza de seguro de viajero vigente, esta unidad convierte cualquier arribo a templos, haciendas o jardines de eventos en un espectáculo fotográfico incomparable.',
+    ],
+    idealOccasions: ['Entradas triunfales de XV Años', 'Bodas espectaculares', 'Eventos de alfombra roja', 'Caravanas y galas VIP'],
+  },
+  {
+    id: 'cadillac-escalade-2020',
+    slug: 'cadillac-escalade-2020',
+    path: '/limusinas/cadillac-escalade-2020/',
+    src: '/images/fleet/4.png',
+    alt: 'Renta de limusina Cadillac Escalade 2020 para 15 personas en CDMX',
+    title: 'Cadillac Escalade 2020',
+    subtitle: 'Lujo Contemporáneo de Gran Escala',
+    capacity: '15 personas',
+    capacityNum: 15,
+    floorType: 'Piso de cristal iluminado',
+    sunroof: 'Panorámico',
+    audio: 'Sonido premium de alta fidelidad',
+    metaTitle: 'Cadillac Escalade 2020 en CDMX | Renta tu Limo',
+    metaDescription: 'Renta la limusina Cadillac Escalade 2020 para 15 personas en CDMX. Piso de cristal, quemacocos panorámico y confort ejecutivo. Cotiza por WhatsApp.',
+    features: [
+      'Capacidad extendida para 15 pasajeros',
+      'Línea moderna con ópticas LED Cadillac de última generación',
+      'Piso de cristal reflectante con iluminación ambiental',
+      'Quemacocos panorámico continuo',
+      'Acústica optimizada con conexión para dispositivos móviles',
+      'Interior tapizado en piel suave con portavasos térmicos',
+    ],
+    meta: [
+      { label: 'Capacidad', value: '15 personas' },
+      { label: 'Piso', value: 'Piso de Cristal' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Audio', value: 'Sonido premium' },
+      { label: 'Cortesía', value: 'Bebidas de cortesía' },
+    ],
+    contentParagraphs: [
+      'La Cadillac Escalade 2020 representa la cúspide del diseño automotriz estadounidense de alta gama adaptado al formato limusina. Sus líneas exteriores elegantes y sus icónicas luces verticales transmiten una imagen de jerarquía diplomática y modernidad que ninguna otra camioneta logra igualar.',
+      'Con capacidad holgada para quince pasajeros, su salón posterior ofrece un espacio generoso para piernas, climatización bizona independiente de alta potencia y una iluminación ambiental indirecta que realza la atmósfera nocturna. El piso de cristal otorga un reflejo elegante y sofisticado que complementa vestidos largos y atuendos de etiqueta rigurosa.',
+      'Ideal para traslados de cortejos nupciales completos, familias de padrinos o directivos corporativos que asisten a cenas de premiación en hoteles y centros de convenciones de la Ciudad de México. El servicio incluye atención personalizada de un chofer ejecutivo y monitoreo continuo de itinerario para garantizar puntualidad incondicional.',
+    ],
+    idealOccasions: ['Bodas con cortejo amplio', 'XV años elegantes', 'Traslados diplomáticos y corporativos', 'Recepciones de gala en hoteles de Polanco'],
+  },
+  {
+    id: 'hummer-h3-bandera',
+    slug: 'hummer-h3-bandera',
+    path: '/limusinas/hummer-h3-bandera/',
+    src: '/images/fleet/5.png',
+    alt: 'Renta de limusina Hummer H3 con puertas de bandera para 14 personas en CDMX',
+    title: 'Hummer H3 Puertas de Bandera',
+    subtitle: 'Acceso Triunfal en Puertas de Bandera',
+    capacity: '14 personas',
+    capacityNum: 14,
+    floorType: 'Piso de cristal iluminado',
+    sunroof: 'Panorámico',
+    audio: 'Sonido premium de alta potencia',
+    doorsType: 'Apertura tipo Bandera lateral',
+    metaTitle: 'Hummer H3 Puertas Bandera CDMX | Renta tu Limo',
+    metaDescription: 'Renta limusina Hummer H3 con puertas de bandera para 14 pasajeros en CDMX. Piso de cristal, quemacocos panorámico y bar de cortesía. Cotiza hoy.',
+    features: [
+      'Puertas tipo bandera con apertura amplia para fácil ascenso y descenso',
+      'Capacidad recomendada para 14 pasajeros',
+      'Piso de cristal iluminado de alta resistencia',
+      'Quemacocos panorámico integrado',
+      'Sistema de sonido de alta potencia y ecualización profesional',
+      'Barra cantinera con hielera y bebidas de bienvenida',
+    ],
+    meta: [
+      { label: 'Capacidad', value: '14 personas' },
+      { label: 'Puertas', value: 'Apertura tipo Bandera' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Piso', value: 'Piso de Cristal' },
+      { label: 'Audio y Bar', value: 'Sonido premium & bebidas de cortesía' },
+    ],
+    contentParagraphs: [
+      'La Hummer H3 con puertas tipo bandera combina la robustez todoterreno con una cinemática de apertura lateral amplia que facilita el acceso ágil de grupos grandes sin tener que agacharse en exceso. Esta característica es sumamente valorada en eventos donde las damas visten trajes de fiesta de gala.',
+      'Su interior aloja con amplitud a catorce pasajeros alrededor de una sala tipo lounge con bar iluminado, piso de cristal templado y quemacocos panorámico. La conexión Bluetooth permite a los festejados ambientar el recorrido con su música preferida a través de altavoces de alta respuesta en graves y agudos.',
+      'Operada por choferes de amplia trayectoria en las vialidades de la Ciudad de México y municipios del Estado de México como Huixquilucan, Naucalpan y Atizapán, esta limusina asegura que la llegada a tu fiesta sea el momento más celebrado de la noche.',
+    ],
+    idealOccasions: ['XV Años y graduaciones', 'Despedidas y aniversarios', 'Giras de celebración nocturna', 'Festivales y sesiones fotográficas'],
+  },
+  {
+    id: 'escalade-platinum',
+    slug: 'escalade-platinum',
+    path: '/limusinas/escalade-platinum/',
+    src: '/images/fleet/6.png',
+    alt: 'Renta de limusina Cadillac Escalade Platinum con pantalla de 50 pulgadas en CDMX',
+    title: 'Escalade Platinum',
+    subtitle: 'Pantalla de 50" & Sonido de Concierto',
+    capacity: '14 personas',
+    capacityNum: 14,
+    floorType: 'Piso de cristal iluminado',
+    sunroof: 'Panorámico',
+    audio: 'Sonido envolvente de alta fidelidad',
+    screenSize: 'Pantalla Ultra HD de 50 pulgadas',
+    metaTitle: 'Renta Limusina Escalade Platinum con Pantalla 50" CDMX',
+    metaDescription: 'Renta limusina Cadillac Escalade Platinum para 14 personas en CDMX. Pantalla de 50", piso de cristal y sonido de concierto. Cotiza por WhatsApp.',
+    features: [
+      'Imponente pantalla plana de 50 pulgadas en la mampara divisoria',
+      'Capacidad para 14 personas en asientos de cuero premium',
+      'Piso de cristal templado iluminado en sincronía',
+      'Quemacocos panorámico con vista superior de la ciudad',
+      'Sistema de sonido de concierto con claridad cristalina',
+      'Entradas multimedia para proyectar videos conmemorativos de la celebración',
+    ],
+    meta: [
+      { label: 'Capacidad', value: '14 personas' },
+      { label: 'Pantalla', value: 'Pantalla de 50"' },
+      { label: 'Audio', value: 'Sonido premium' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Piso', value: 'Piso de Cristal' },
+    ],
+    contentParagraphs: [
+      'La Escalade Platinum con pantalla de 50 pulgadas es el buque insignia del entretenimiento audiovisual de lujo en México. Diseñada especialmente para quienes desean proyectar videos de semblanza de la quinceañera, recuerdos de noviazgo de la boda o presentaciones institucionales durante el traslado.',
+      'Su pantalla de cincuenta pulgadas se encuentra integrada de forma magistral en la división entre la cabina del chofer y el salón VIP, permitiendo reproducir contenido con calidad cinematográfica. Los catorce pasajeros disfrutan de acústica de sala de conciertos combinada con piso de cristal, quemacocos panorámico y barra de servicio.',
+      'Cada detalle interior ha sido concebido para transmitir exclusividad: vestiduras impecables, iluminación regulable y aislamiento acústico que silencia el ruido exterior del tránsito urbano de la CDMX. Servicio con contrato por escrito y chofer ejecutivo privado.',
+    ],
+    idealOccasions: ['Bodas con proyección de video de novios', 'XV años con semblanza audiovisual', 'Eventos corporativos de gala', 'Lanzamientos de marca y alfombras rojas'],
+  },
+  {
+    id: 'escalade-negra',
+    slug: 'escalade-negra',
+    path: '/limusinas/escalade-negra/',
+    src: '/images/fleet/7.png',
+    alt: 'Renta de limusina Escalade Negra Edición Presidencial para 13 personas en CDMX',
+    title: 'Escalade Negra',
+    subtitle: 'Edición Black Presidencial',
+    capacity: '13 personas',
+    capacityNum: 13,
+    floorType: 'Piso de lujo acabado fino',
+    sunroof: 'Panorámico',
+    audio: 'Sonido premium de alta fidelidad',
+    metaTitle: 'Renta de Limusina Escalade Negra en CDMX | Renta tu Limo',
+    metaDescription: 'Renta limusina Escalade Negra Black Edition para 13 personas en CDMX. Piso de lujo, quemacocos panorámico y chofer ejecutivo de etiqueta.',
+    features: [
+      'Pintura negra obsidiana profunda con cristales de máxima privacidad',
+      'Capacidad para 13 pasajeros en sillones ejecutivos de piel',
+      'Piso de lujo acabado fino de alta durabilidad',
+      'Quemacocos panorámico de cristal tintado',
+      'Acústica premium para llamadas o reproducción musical',
+      'Chofer de etiqueta diplomática y confidencialidad garantizada',
+    ],
+    meta: [
+      { label: 'Capacidad', value: '13 personas' },
+      { label: 'Audio', value: 'Sonido premium' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Piso', value: 'Piso de lujo' },
+      { label: 'Cortesía', value: 'Bebidas de cortesía' },
+    ],
+    contentParagraphs: [
+      'La Escalade Negra Black Edition es la encarnación del transporte ceremonial sobrio, discreto y de máxima autoridad en la capital. Con su acabado en negro obsidiana impecable y cristales de alta densidad que garantizan la confidencialidad absoluta de sus trece ocupantes, es la unidad predilecta de personalidades, directivos y familias que buscan elegancia sin estridencias.',
+      'Su cabina prescinde de luces fluorescentes estridentes y adopta un ambiente más refinado con piso de lujo de textura fina, tapicería en piel negra cosida a mano, quemacocos panorámico tintado y una acústica balanceada. Cuenta con barra de cortesía con bebidas frías y climatización digital controlada.',
+      'Es la opción ideal tanto para bodas nocturnas en recintos históricos como para traslados entre los aeropuertos AICM o AIFA y las zonas corporativas de Santa Fe, Reforma y Polanco. Se renta con chofer formal de etiqueta diplomática y protocolo de puntualidad garantizada.',
+    ],
+    idealOccasions: ['Bodas nocturnas elegantes', 'Traslados de directivos y diplomáticos', 'Cenas de aniversario reservadas', 'Arribos a estrenos y galas privadas'],
+  },
+  {
+    id: 'hummer-h2-imperial',
+    slug: 'hummer-h2-imperial',
+    path: '/limusinas/hummer-h2-imperial/',
+    src: '/images/fleet/8.png',
+    alt: 'Renta de limusina Hummer H2 Imperial de 16 personas en CDMX para grandes eventos',
+    title: 'Hummer H2 Imperial',
+    subtitle: 'Máxima Capacidad & Presencia Imponente',
+    capacity: '16 personas',
+    capacityNum: 16,
+    floorType: 'Piso laminado de lujo',
+    sunroof: 'Panorámico',
+    audio: 'Sonido premium de gran cobertura',
+    metaTitle: 'Renta Limusina Hummer H2 Imperial 16 Personas CDMX',
+    metaDescription: 'Renta la limusina Hummer H2 Imperial para 16 personas en CDMX. Piso laminado de lujo, quemacocos panorámico y gran capacidad. Cotiza por WhatsApp.',
+    features: [
+      'Máxima capacidad de la flota: 16 pasajeros cómodamente sentados',
+      'Piso laminado de lujo de alta resistencia (reconciliado formalmente)',
+      'Quemacocos panorámico continuo para disfrutar del cielo urbano',
+      'Sistema de sonido envolvente con cobertura total del salón',
+      'Barra cantinera doble con hielera y bebidas de bienvenida',
+      'Doble eje trasero reforzado y estabilidad superior de marcha',
+    ],
+    meta: [
+      { label: 'Capacidad', value: '16 personas' },
+      { label: 'Audio', value: 'Sonido premium' },
+      { label: 'Quemacocos', value: 'Panorámico' },
+      { label: 'Piso', value: 'Piso laminado' },
+      { label: 'Cortesía', value: 'Bebidas de cortesía' },
+    ],
+    contentParagraphs: [
+      'La Hummer H2 Imperial es la unidad de mayor escala y capacidad de transporte de pasajeros de nuestra flota en la Ciudad de México. Con espacio holgado para dieciséis personas sentadas con total comodidad, elimina la necesidad de rentar dos vehículos por separado para cortejos nupciales numerosos o grupos grandes de chambelanes y amigos de la quinceañera.',
+      'A diferencia de las unidades de cristal, este modelo está equipado con un piso laminado de lujo de alta resistencia, diseñado específicamente para brindar un soporte cálido, sólido y elegante al tránsito continuo de calzado formal de fiesta. Su quemacocos panorámico, sillones perimetrales y barra de servicio doble garantizan un trayecto festivo de primer nivel.',
+      'Acompañada de chofer profesional de etiqueta y respaldo por contrato formal de servicio, la Hummer H2 Imperial asegura traslados seguros y puntuales en toda la Ciudad de México y municipios del Estado de México.',
+    ],
+    idealOccasions: ['Grupos grandes de XV Años (16 personas)', 'Cortejos nupciales numerosos', 'Graduaciones de grupos escolares', 'Fiestas y aniversarios multitudinarios'],
   },
 ];
+
+export type Limousine = FleetVehicle;
+export const FLEET_DATA = FLEET_VEHICLES;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Calendar, MessageCircle, ChevronDown } from 'lucide-react';
 import { snappySpring } from '@/lib/motion';
 import { assetUrl } from '@/lib/utils';
@@ -136,7 +136,7 @@ _Por favor, indíquenme disponibilidad para esta fecha y los detalles de contrat
             </div>
 
             {/* Botón Enviar Solicitud por WhatsApp */}
-            <motion.button
+            <m.button
               type="submit"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
@@ -145,7 +145,7 @@ _Por favor, indíquenme disponibilidad para esta fecha y los detalles de contrat
             >
               <MessageCircle className="w-4 h-4 fill-obsidian-deep" />
               <span>Cotizar vía WhatsApp (55 2813 0558)</span>
-            </motion.button>
+            </m.button>
           </form>
         </div>
       </div>
