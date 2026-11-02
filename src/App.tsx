@@ -15,7 +15,7 @@ import { MessageCircle } from 'lucide-react';
 import { snappySpring } from '@/lib/motion';
 
 // Script de opacidad gradual según días transcurridos desde fecha límite
-const DUE_DATE_STR = '2026-10-30';
+const DUE_DATE_STR = '2026-11-01';
 const DEADLINE_DAYS = 60;
 
 const FleetRouteWrapper: React.FC = () => {

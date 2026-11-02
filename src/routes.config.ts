@@ -17,7 +17,7 @@ export interface RouteConfig {
   schema: Record<string, unknown>;
 }
 
-const BUILD_DATE = '2026-10-07';
+const BUILD_DATE = '2026-11-01';
 
 export const ROUTES_CONFIG: RouteConfig[] = [
   // 1. Home
